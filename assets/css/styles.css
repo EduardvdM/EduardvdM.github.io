@@ -252,6 +252,7 @@ a:hover {
   font-size: 1.3rem;
   margin-top: -30px;
   font-style: bold;
+  text-align: center;
 }
 .abstract-text {
   font-size: 12px; 
