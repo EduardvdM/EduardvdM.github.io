@@ -11,14 +11,26 @@ jQuery(document).ready(function($) {
 	};
 
 	var initio_parallax_animation = function() { 
-		$('.parallax').each( function(i, obj) {
-			var speed = $(this).attr('parallax-speed');
-			if( speed ) {
-				var background_pos = '-' + (window.pageYOffset / speed) + "px";
-				$(this).css( 'background-position', 'center ' + background_pos );
-			}
-		});
-	}
+        $('.parallax').each(function(i, obj) {
+            // Determine the appropriate speed based on screen size
+            var speed;
+            var width = window.innerWidth;
+            
+            if (width < 400) { // X-Small screens
+                speed = $(this).attr('parallax-speed') || 5.0; // Default to 0.2 if not set
+            } else if (width < 768) { // Small screens
+                speed = $(this).attr('parallax-speed') || 3.2; // Default to 0.2 if not set
+            } else if (width < 992) { // Medium screens
+                speed = $(this).attr('parallax-speed') || 1.8; // Default to 0.4 if not set
+            } else { // Large screens
+                speed = $(this).attr('parallax-speed') || 0.8; // Default to 0.6 if not set
+            }
+    
+            // Calculate the background position
+            var background_pos = '-' + (window.pageYOffset / speed) + "px";
+            $(this).css('background-position', 'center ' + background_pos);
+        });
+    }
 	
 	// run our function on load
 	sticky_navigation();
