@@ -635,7 +635,10 @@ img {
 }
 .pdf {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 4/3;
+  display: block; /* Makes the object a block element */
+  justify-content: center;
+  align-items: center; /* Centers vertically */
 }
 .pdf,
 html,
