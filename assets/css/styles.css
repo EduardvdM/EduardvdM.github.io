@@ -288,8 +288,23 @@ a:hover {
 }
 #head .title {
   font-family: Helvetica, Geneva, Tahoma, 'Times New Roman', Georgia, sans-serif;
-  font-size: 49px;
   font-size: 3.0625rem;
+}
+@media (max-width: 768px) {
+  #head .title {
+    font-size: 2.5rem; /* Adjust size for tablets and small laptops */
+  }
+}
+/* Small screens (up to 576px) */
+@media (max-width: 576px) {
+  #head .title {
+    font-size: 2rem; /* Smaller size for mobile devices */
+  }
+}
+@media (max-width: 375px) {
+  #head .title {
+    font-size: 1.75rem; /* Further reduced size for smaller phones */
+  }
 }
 #head .title a {
   text-decoration: none;
@@ -297,7 +312,6 @@ a:hover {
 }
 #head .tagline {
   display: block;
-  font-size: 16px;
   font-size: 0.875rem;
   line-height: 1.2em;
   color: #333333;
@@ -317,14 +331,76 @@ a:hover {
   background-attachment: scroll;
   background-repeat: no-repeat;
 }
+@media (max-width: 768px) {
+  #head .tagline {
+    font-size: 0.8rem; /* Slightly smaller for tablets and small laptops */
+    line-height: 1.1em; /* Adjusted line-height for readability */
+  }
+}
+
+/* Small screens (up to 576px) */
+@media (max-width: 576px) {
+  #head .tagline {
+    font-size: 0.75rem; /* Smaller font size for mobile devices */
+    line-height: 1em; /* Further adjustment for compact screens */
+  }
+}
+
+/* Extra small screens (up to 375px) */
+@media (max-width: 375px) {
+  #head .tagline {
+    font-size: 0.7rem; /* Reduced for small phones */
+    line-height: 1em;
+  }
+}
 .home #head .title {
-  font-size: 49px;
   font-size: 3.0625rem;
 }
+/* Medium screens (up to 768px) */
+@media (max-width: 768px) {
+  .home #head .title {
+    font-size: 2.5rem; /* Slightly smaller font size for tablets */
+  }
+}
+
+/* Small screens (up to 576px) */
+@media (max-width: 576px) {
+  .home #head .title {
+    font-size: 2rem; /* Smaller font size for mobile devices */
+  }
+}
+/* Extra small screens (up to 375px) */
+@media (max-width: 375px) {
+  .home #head .title {
+    font-size: 1.75rem; /* Further reduced size for smaller phones */
+  }
+}
 .home #head .tagline {
-  font-size: 20px;
   font-size: 1rem;
   margin: 15px 0 0;
+}
+/* Medium screens (up to 768px) */
+@media (max-width: 768px) {
+  .home #head .tagline {
+    font-size: 0.9rem; /* Slightly smaller font size for tablets */
+    margin: 10px 0 0; /* Adjust margin for medium screens */
+  }
+}
+
+/* Small screens (up to 576px) */
+@media (max-width: 576px) {
+  .home #head .tagline {
+    font-size: 0.8rem; /* Smaller font size for mobile devices */
+    margin: 8px 0 0; /* Adjust margin for small screens */
+  }
+}
+
+/* Extra small screens (up to 375px) */
+@media (max-width: 375px) {
+  .home #head .tagline {
+    font-size: 0.75rem; /* Reduced font size for smaller phones */
+    margin: 5px 0 0; /* Reduced margin for extra small screens */
+  }
 }
 /*********************************************************************
 
