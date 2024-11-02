@@ -17,6 +17,28 @@ body {
 .largetopspace {
   margin-top: 62px;
 }
+
+/* Default (large screens) */
+.cvmargins {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 768px) {
+  .cvmargins {
+      margin-top: 20px;
+      margin-bottom: 20px;
+  }
+}
+
+/* Small screens (phones) */
+@media (max-width: 576px) {
+  .cvmargins {
+      margin-top: 5px;
+      margin-bottom: 5px;
+  }
+}
 /*********************************************************************
 
 
@@ -500,7 +522,6 @@ img {
 }
 /* Section - Featured */
 .featured {
-  font-size: 15px;
   font-size: 1rem;
 }
 
@@ -636,6 +657,12 @@ img {
 .pdf {
   width: 100%;
   aspect-ratio: 3/4;
+}
+/* For small screens */
+@media (max-width: 576px) {
+  .pdf {
+      height: 300px; /* Smaller height for small screens */
+  }
 }
 .pdf,
 html,
