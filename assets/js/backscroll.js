@@ -16,8 +16,8 @@ jQuery(document).ready(function($) {
             var speed;
             var width = window.innerWidth;
             
-            if (width < 400) { // X-Small screens
-                speed = $(this).attr('parallax-speed') || 5.0; // Default to 0.2 if not set
+            if (width < 375) { // X-Small screens
+                speed = $(this).attr('parallax-speed') || 10.0; // Default to 0.2 if not set
             } else if (width < 768) { // Small screens
                 speed = $(this).attr('parallax-speed') || 3.2; // Default to 0.2 if not set
             } else if (width < 992) { // Medium screens
