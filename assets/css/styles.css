@@ -278,6 +278,12 @@ a:hover {
   background-attachment: scroll;
   background-repeat: no-repeat;
 }
+/* For extra small screens (up to 400px) */
+@media (max-width: 400px) {
+  #head {
+    background-size: 130%; /* Zoom in even more for very small screens */
+  }
+}
 #head img.img-circle {
   display: block;
   width: 140px;
@@ -330,6 +336,11 @@ a:hover {
   color: #7C7C7C;
   background-attachment: scroll;
   background-repeat: no-repeat;
+}
+@media (max-width: 400px) {
+  .home #head {
+    background-size: 130%; /* Zoom in even more for very small screens */
+  }
 }
 @media (max-width: 768px) {
   #head .tagline {
