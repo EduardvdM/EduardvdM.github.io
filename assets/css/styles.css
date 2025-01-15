@@ -342,14 +342,14 @@ a:hover {
   display: block;
   font-size: 0.875rem;
   line-height: 1.2em;
-  color: #333333;
+  color: #000000;
   margin: 5px 0 0;
 }
 #head .tagline b {
   font-weight: normal;
 }
 #head .tagline a {
-  color: #333333;
+  color: #000000;
 }
 .home #head {
   padding: 90px 0;
