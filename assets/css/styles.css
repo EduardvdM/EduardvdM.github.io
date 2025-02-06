@@ -20,15 +20,15 @@ body {
 
 /* Default (large screens) */
 .cvmargins {
-  margin-top: 5vh;
-  margin-bottom: 5vh;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
 }
 
 /* Medium screens (tablets) */
 @media (max-width: 768px) {
   .cvmargins {
-      margin-top: 20px;
-      margin-bottom: 20px;
+      margin-top: 15px;
+      margin-bottom: 150px;
   }
 }
 
