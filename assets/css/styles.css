@@ -61,9 +61,8 @@ body {
 }
 
 @media (max-width: 576px) {
-  .navbar {
-    flex-direction: column; /* Stack items vertically on small screens */
-    width: 70%;
+  .navbar ul li {
+    display: block;
   }
   
   .navbar-collapse {
