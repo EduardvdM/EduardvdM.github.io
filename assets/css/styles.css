@@ -59,7 +59,7 @@ body {
   justify-content: space-between; /* Space items evenly */
   align-items: center; /* Vertically center items */
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .navbar {
     flex-direction: column; /* Stack items vertically on small screens */
   }
@@ -69,6 +69,17 @@ body {
     width: 100%; /* Ensure it takes full width */
   }
 }
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: column; /* Stack items vertically on small screens */
+  }
+  
+  .navbar-collapse {
+    display: block; /* Show the collapsed menu */
+    width: 100%; /* Ensure it takes full width */
+  }
+}
+
 .navbar.stick {
   position: fixed;
   top: 0;
