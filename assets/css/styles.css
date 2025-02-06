@@ -67,7 +67,7 @@ body {
   
   .navbar-collapse {
     display: block; /* Show the collapsed menu */
-    width: 150%; /* Ensure it takes full width */
+    width: 70%; /* Ensure it takes full width */
   }
 }
 
