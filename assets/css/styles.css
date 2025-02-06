@@ -55,6 +55,9 @@ body {
   border-radius: 0;
   background-clip: padding-box;
   width: 100%;
+  display: flex; /* Use flex for layout */
+  justify-content: space-between; /* Space items evenly */
+  align-items: center; /* Vertically center items */
 }
 @media (max-width: 767px) {
   .navbar {
@@ -71,6 +74,7 @@ body {
   top: 0;
   left: 0;
   opacity: .85;
+  z-index: 1000; /* Ensure it stays on top */
 }
 .navbar-collapse {
   -webkit-border-radius: 0;
