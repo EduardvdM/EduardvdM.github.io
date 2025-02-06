@@ -59,7 +59,7 @@ body {
   justify-content: space-between; /* Space items evenly */
   align-items: center; /* Vertically center items */
 }
-@media (max-width: 767px) {
+@media (max-width: 576px) {
   .navbar {
     flex-direction: column; /* Stack items vertically on small screens */
   }
