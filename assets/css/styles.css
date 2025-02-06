@@ -59,15 +59,17 @@ body {
   justify-content: space-between; /* Space items evenly */
   align-items: center; /* Vertically center items */
 }
-
 @media (max-width: 576px) {
-  .navbar ul li {
-    display: block;
+  .navbar {
+    display: flex !important;
+    flex-direction: column !important;
   }
-  
-  .navbar-collapse {
-    display: block; /* Show the collapsed menu */
-    width: 100%; /* Ensure it takes full width */
+  .navbar ul {
+    display: flex;
+    flex-direction: column;
+  }
+  .navbar ul li {
+    width: 100%; /* Ensure each list item takes full width */
   }
 }
 
