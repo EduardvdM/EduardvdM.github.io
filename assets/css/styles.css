@@ -20,8 +20,8 @@ body {
 
 /* Default (large screens) */
 .cvmargins {
-  margin-top: 3vh;
-  margin-bottom: 3vh;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
 }
 
 /* Medium screens (tablets) */
