@@ -335,6 +335,7 @@ a:hover {
 #head .title {
   font-family: Helvetica, Geneva, Tahoma, 'Times New Roman', Georgia, sans-serif;
   font-size: 3.0625rem;
+  font-variant: small-caps;
 }
 @media (max-width: 768px) {
   #head .title {
