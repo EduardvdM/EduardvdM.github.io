@@ -6,8 +6,7 @@ jQuery(document).ready(function($) {
 	
 	// our function that decides weather the navigation bar should have "fixed" css position or not.
 	var sticky_navigation = function(){
-		var scroll_top = $(window).scrollTop(); // our current vertical position from the top
-		   
+		// sticky nav disabled — navbar stays in place on scroll
 	};
 
 	var initio_parallax_animation = function() { 
