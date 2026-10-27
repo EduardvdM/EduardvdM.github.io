@@ -1,0 +1,245 @@
+---
+layout: default
+title: Fieldwork
+permalink: /fieldwork
+image: /assets/images/social-fieldwork.jpg
+image_alt: "Four vignette cards from Eduard van der Merwe's fieldwork survey in Maua, Kenya, with the question: how do religious leaders, scripture, and community shape our beliefs and social norms?"
+description: "Dissertation fieldwork by Eduard van der Merwe in Maua, Meru County, Kenya: an original survey of 635 women, 17 religious leaders, and 4 focus groups."
+---
+<div class="container">
+	<div class="row section featured topspace bottomspace page-pad">
+
+		<!-- Intro: the question, then what I did -->
+		<h2 class="section-title">Fieldwork in Maua, Kenya</h2>
+		<!-- Jump links to each section -->
+		<nav class="page-jump" aria-label="On this page">
+			<a href="#study-design">Study Design</a>
+			<a href="#vignette-cards">Vignette Cards</a>
+			<a href="#pebble-voting-game">Pebble Voting Game</a>
+			<a href="#gallery">Gallery</a>
+			<a href="#where-and-when">Where &amp; When</a>
+		</nav>
+		<div class="fieldwork-intro">
+			<p class="fieldwork-question">How do religious leaders, scripture, and community shape our beliefs and social norms?</p>
+			<p>In 2026, I designed and led an original survey in Maua, Meru County, Kenya, for my job market paper, <em>Preaching Against the Choir: Religious Leaders and Reproductive Norms in Kenya</em>, in partnership with Sodzo Kenya.</p>
+			<div class="paper-actions">
+				<a class="paper-btn" href="/research#preaching-against-the-choir">Paper</a>
+				<a class="paper-btn" href="/data#preaching-against-the-choir">Data</a>
+			</div>
+		</div>
+
+		<!-- At a glance -->
+		<ul class="stat-strip" aria-label="Fieldwork at a glance">
+			<li class="stat-tile"><span class="stat-number">635</span><span class="stat-label">women surveyed</span></li>
+			<li class="stat-tile"><span class="stat-number">17</span><span class="stat-label">religious leaders</span></li>
+			<li class="stat-tile"><span class="stat-number">4</span><span class="stat-label">focus groups</span></li>
+			<li class="stat-tile"><span class="stat-number">20</span><span class="stat-label">enumerators trained</span></li>
+			<li class="stat-tile"><span class="stat-number">Kimeru</span><span class="stat-label">survey language</span></li>
+		</ul>
+
+		<!-- Key finding -->
+		<aside class="fieldwork-finding" aria-label="Key finding">
+			<span class="finding-label">Key Finding</span>
+			<p>Religious leaders are most effective when preaching against an entrenched social norm.</p>
+			<a class="paper-btn" href="/research#preaching-against-the-choir">Read the Abstract</a>
+		</aside>
+
+		<!-- Study design -->
+		<div class="section-head">
+			<h2 class="section-title" id="study-design">Study Design</h2>
+			<a class="to-top" href="#header" aria-label="Back to top"><span aria-hidden="true">&uarr;</span></a>
+		</div>
+		<div class="fieldwork-design">
+			<p>Each woman heard Kendi's story, told on four picture cards: who Kendi is, her community, her religious leader, and her reflection on scripture. The community norm, the leader's stance, and the scripture passage were varied at random, so comparing answers shows how much each one shapes views on family planning.</p>
+			<button class="card-open card-open--wide" type="button" data-src-en="/assets/images/fieldwork/cards/en/example-story.jpg" data-alt="Four vignette cards in a row: Kendi, 28 years old, married, with one child; her community, where about half of the women use family planning; her religious leader, who supports family planning; and her reflection on Genesis 1:28, believing God has called her to have many children" data-caption="An example of a story a survey respondent saw: about half of the women in Kendi's community use family planning, her religious leader supports it, and she reflects on Genesis 1:28" aria-label="Enlarge example story">
+				<img src="/assets/images/fieldwork/cards/en/example-story-small.jpg" alt="" width="900" height="316" loading="lazy" decoding="async">
+			</button>
+			<span class="card-caption">An example of a story a survey respondent saw</span>
+		</div>
+
+		<!-- Vignette cards: English and Kimeru versions, listed in _data/vignette_cards.yml -->
+		<div class="section-head">
+			<h2 class="section-title" id="vignette-cards">Vignette Cards</h2>
+			<a class="to-top" href="#header" aria-label="Back to top"><span aria-hidden="true">&uarr;</span></a>
+		</div>
+		<div class="card-lang" data-lang="en">
+			<div class="card-intro">
+				<div class="lang-toggle" role="group" aria-label="Card language" hidden>
+					<button type="button" data-lang="en" aria-pressed="true">English</button>
+					<button type="button" data-lang="km" aria-pressed="false">Kimeru</button>
+				</div>
+			</div>
+			{%- assign card_path = '/assets/images/fieldwork/cards/' %}
+			{%- for group in site.data.vignette_cards %}
+			<div class="card-group">
+				<h3 class="card-group-title">{{ group.title }}</h3>
+				<p class="card-group-note">{{ group.note }}</p>
+				<ul class="card-row">
+					{%- for card in group.cards %}
+					<li>
+						<button class="card-open" type="button" data-src-en="{{ card_path }}en/{{ card.name }}.jpg" data-src-km="{{ card_path }}km/{{ card.name }}.jpg" data-alt="{{ group.title | escape }} card: {{ card.caption | escape }}" data-caption="{{ group.title | escape }}: {{ card.caption | escape }}" aria-label="Enlarge card: {{ card.caption | escape }}">
+							<img class="lang-en" src="{{ card_path }}en/{{ card.name }}-small.jpg" alt="" width="320" height="451" loading="lazy" decoding="async">
+							<img class="lang-km" src="{{ card_path }}km/{{ card.name }}-small.jpg" alt="" width="320" height="451" loading="lazy" decoding="async">
+						</button>
+						<span class="card-caption">{{ card.caption }}</span>
+					</li>
+					{%- endfor %}
+				</ul>
+			</div>
+			{%- endfor %}
+		</div>
+
+		<!-- Pebble voting game: bag cards in English and Kimeru -->
+		<div class="section-head">
+			<h2 class="section-title" id="pebble-voting-game">Pebble Voting Game</h2>
+			<a class="to-top" href="#header" aria-label="Back to top"><span aria-hidden="true">&uarr;</span></a>
+		</div>
+		<div class="card-lang pebble-lang" data-lang="en">
+			<div class="pebble-game">
+				<div class="pebble-text">
+					<p>Women also played a pebble game, similar to voting, with four striped bags and these picture cards.</p>
+					<button class="card-open card-open--photo" type="button" data-src-en="/assets/images/fieldwork/fieldwork-03.jpg" data-alt="A table laid out with printed survey booklets, cards, and striped bags for the pebble voting game" data-caption="The striped bags with the other survey materials" aria-label="Enlarge photo of the striped bags">
+						<img src="/assets/images/fieldwork/fieldwork-03-small.jpg" alt="" width="720" height="540" loading="lazy" decoding="async">
+					</button>
+					<span class="card-caption">The striped bags with the other survey materials</span>
+				</div>
+				<div class="pebble-cards">
+					<div class="lang-toggle" role="group" aria-label="Bag card language" hidden>
+						<button type="button" data-lang="en" aria-pressed="true">English</button>
+						<button type="button" data-lang="km" aria-pressed="false">Kimeru</button>
+					</div>
+					<ul class="card-row card-row--bags">
+						<li>
+							<button class="card-open" type="button" data-src-en="/assets/images/fieldwork/cards/en/bag-1-preference.jpg" data-src-km="/assets/images/fieldwork/cards/km/bag-1-preference.jpg" data-alt="Card for bag one, my preference, with pictures of health, savings, and a thumbs up and thumbs down" data-caption="Bag 1: My preference" aria-label="Enlarge card: Bag 1: My preference">
+								<img class="lang-en" src="/assets/images/fieldwork/cards/en/bag-1-preference-small.jpg" alt="" width="320" height="451" loading="lazy" decoding="async">
+								<img class="lang-km" src="/assets/images/fieldwork/cards/km/bag-1-preference-small.jpg" alt="" width="320" height="451" loading="lazy" decoding="async">
+							</button>
+							<span class="card-caption">Bag 1: My preference</span>
+						</li>
+						<li>
+							<button class="card-open" type="button" data-src-en="/assets/images/fieldwork/cards/en/bag-2-scripture.jpg" data-src-km="/assets/images/fieldwork/cards/km/bag-2-scripture.jpg" data-alt="Card for bag two, scripture and God, with pictures of a closed and an open Bible" data-caption="Bag 2: Scripture/God" aria-label="Enlarge card: Bag 2: Scripture/God">
+								<img class="lang-en" src="/assets/images/fieldwork/cards/en/bag-2-scripture-small.jpg" alt="" width="320" height="451" loading="lazy" decoding="async">
+								<img class="lang-km" src="/assets/images/fieldwork/cards/km/bag-2-scripture-small.jpg" alt="" width="320" height="451" loading="lazy" decoding="async">
+							</button>
+							<span class="card-caption">Bag 2: Scripture/God</span>
+						</li>
+						<li>
+							<button class="card-open" type="button" data-src-en="/assets/images/fieldwork/cards/en/bag-3-community.jpg" data-src-km="/assets/images/fieldwork/cards/km/bag-3-community.jpg" data-alt="Card for bag three, my village, with a drawing of a village and a row of women" data-caption="Bag 3: My village" aria-label="Enlarge card: Bag 3: My village">
+								<img class="lang-en" src="/assets/images/fieldwork/cards/en/bag-3-community-small.jpg" alt="" width="320" height="451" loading="lazy" decoding="async">
+								<img class="lang-km" src="/assets/images/fieldwork/cards/km/bag-3-community-small.jpg" alt="" width="320" height="451" loading="lazy" decoding="async">
+							</button>
+							<span class="card-caption">Bag 3: My village</span>
+						</li>
+						<li>
+							<button class="card-open" type="button" data-src-en="/assets/images/fieldwork/cards/en/bag-4-leader.jpg" data-src-km="/assets/images/fieldwork/cards/km/bag-4-leader.jpg" data-alt="Card for bag four, my religious leader, with a drawing of a church leader holding a Bible" data-caption="Bag 4: My religious leader" aria-label="Enlarge card: Bag 4: My religious leader">
+								<img class="lang-en" src="/assets/images/fieldwork/cards/en/bag-4-leader-small.jpg" alt="" width="320" height="451" loading="lazy" decoding="async">
+								<img class="lang-km" src="/assets/images/fieldwork/cards/km/bag-4-leader-small.jpg" alt="" width="320" height="451" loading="lazy" decoding="async">
+							</button>
+							<span class="card-caption">Bag 4: My religious leader</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- Gallery: photos and captions come from _data/fieldwork_photos.yml. Each photo has a full-size file (enlarged view)
+		     and a -small copy (gallery row); a missing photo shows a "coming soon" tile -->
+		<div class="section-head">
+			<h2 class="section-title" id="gallery">Gallery</h2>
+			<a class="to-top" href="#header" aria-label="Back to top"><span aria-hidden="true">&uarr;</span></a>
+		</div>
+		<div class="gallery" role="region" aria-roledescription="carousel" aria-label="Fieldwork photos">
+			<div class="gallery-viewport">
+				<ul class="gallery-track">
+					{%- for photo in site.data.fieldwork_photos %}
+					{%- assign photo_path = '/assets/images/fieldwork/' | append: photo.file %}
+					{%- assign photo_file = site.static_files | where: "path", photo_path | first %}
+					<li class="gallery-slide" aria-roledescription="slide" aria-label="{{ forloop.index }} of {{ forloop.length }}">
+						<figure>
+							{%- if photo_file %}
+							<button class="gallery-open" type="button" data-src="{{ photo_path }}" data-alt="{{ photo.alt | escape }}" data-caption="{{ photo.caption | escape }}" aria-label="Enlarge photo: {{ photo.caption | escape }}">
+								<img src="{{ photo_path | replace: '.jpg', '-small.jpg' }}" alt="" width="720" height="540" loading="lazy" decoding="async">
+							</button>
+							{%- else %}
+							<div class="gallery-placeholder">{% include icon.html name="camera" %}<span>Photo coming soon</span></div>
+							{%- endif %}
+							<figcaption>{{ photo.caption }}</figcaption>
+						</figure>
+					</li>
+					{%- endfor %}
+				</ul>
+			</div>
+			<div class="gallery-controls" hidden>
+				<button class="gallery-btn gallery-prev" type="button" aria-label="Previous photos">{% include icon.html name="chevron-left" %}</button>
+				<button class="gallery-btn gallery-toggle" type="button" aria-label="Pause slideshow">{% include icon.html name="pause" class="icon-pause" %}{% include icon.html name="play" class="icon-play" %}</button>
+				<button class="gallery-btn gallery-next" type="button" aria-label="Next photos">{% include icon.html name="chevron-right" %}</button>
+			</div>
+		</div>
+
+		<!-- Where and when -->
+		<div class="section-head">
+			<h2 class="section-title" id="where-and-when">Where &amp; When</h2>
+			<a class="to-top" href="#header" aria-label="Back to top"><span aria-hidden="true">&uarr;</span></a>
+		</div>
+		<div class="fieldwork-grid">
+			<article class="fieldwork-card">
+				<h3>Location</h3>
+				<!-- Boundaries from geoBoundaries (public domain) -->
+				{% include fieldwork-map.svg %}
+			</article>
+			<article class="fieldwork-card">
+				<h3>Timeline</h3>
+				<ol class="timeline timeline--vertical">
+					<li>
+						<span class="timeline-date">February&ndash;March 2026</span>
+						<span class="timeline-title">Study Design</span>
+						<span class="timeline-text">Study and survey instruments designed</span>
+					</li>
+					<li>
+						<span class="timeline-date">June 2026</span>
+						<span class="timeline-title">Translation</span>
+						<span class="timeline-text">Instruments translated into Kimeru</span>
+					</li>
+					<li>
+						<span class="timeline-date">July 7&ndash;8, 2026</span>
+						<span class="timeline-title">Focus Groups</span>
+						<span class="timeline-text">4 focus groups</span>
+					</li>
+					<li>
+						<span class="timeline-date">July 9&ndash;10, 2026</span>
+						<span class="timeline-title">Pilot</span>
+						<span class="timeline-text">Instruments tested in a pilot</span>
+					</li>
+					<li>
+						<span class="timeline-date">July 13&ndash;31, 2026</span>
+						<span class="timeline-title">Main Survey</span>
+						<span class="timeline-text">635 women surveyed, with 17 religious leader interviews alongside</span>
+					</li>
+				</ol>
+			</article>
+		</div>
+
+		<!-- Next steps -->
+		<aside class="fieldwork-cta" aria-label="Read more">
+			<p>Curious about what the study found and why?</p>
+			<div class="paper-actions">
+				<a class="paper-btn" href="/research#preaching-against-the-choir">Read the Paper</a>
+				<a class="paper-btn" href="/data#preaching-against-the-choir">See the Data Sources</a>
+				<a class="paper-btn" href="mailto:e.vdmerwe@rice.edu">Get in Touch</a>
+			</div>
+		</aside>
+
+		<!-- Support -->
+		<div class="section-head">
+			<h2 class="section-title">Support &amp; Acknowledgements</h2>
+			<a class="to-top" href="#header" aria-label="Back to top"><span aria-hidden="true">&uarr;</span></a>
+		</div>
+		<div class="fieldwork-intro">
+			<p>I gratefully acknowledge financial support from the Society for the Scientific Study of Religion, as well as the Social Sciences Research Institute, the Wagoner Foreign Study Scholarship Program, and the Department of Economics at Rice University.
+			This study was approved by the Rice University Institutional Review Board (protocol IRB-FY2026-386) and conducted in partnership with Sodzo Kenya.
+			A big thank you to Sodzo International and their Kenya team, without whom this study would not have been possible.
+			I am also grateful to the enumerator team and everyone around Maua who took part.</p>
+		</div>
+
+	</div>
+</div>

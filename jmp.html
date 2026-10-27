@@ -1,0 +1,19 @@
+---
+# Short link for the job market paper: eduardvandermerwe.com/jmp opens the latest PDF (set in _data/job_market.yml)
+layout: null
+permalink: /jmp
+---
+{%- assign pdf = site.data.job_market.paper.pdf -%}
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
+<head>
+	<meta charset="utf-8">
+	<title>{{ site.data.job_market.paper.title | escape }} | {{ site.title }}</title>
+	<meta name="robots" content="noindex">
+	<link rel="canonical" href="{{ pdf | absolute_url }}">
+	<meta http-equiv="refresh" content="0; url={{ pdf }}">
+</head>
+<body>
+	<p>Opening the latest version of the paper. If nothing happens, <a href="{{ pdf }}">open the PDF</a>.</p>
+</body>
+</html>

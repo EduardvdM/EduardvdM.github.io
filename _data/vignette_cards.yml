@@ -1,0 +1,47 @@
+# Vignette cards on /fieldwork, grouped and ordered as shown.
+# Each card has an English and a Kimeru image in assets/images/fieldwork/cards/en/ and .../km/,
+# saved as NAME.jpg (enlarged view) and NAME-small.jpg (card row).
+
+- title: "Kendi"
+  note: "Five versions of Kendi differ in her age, marital status, and number of children."
+  cards:
+    - name: profile-a
+      caption: "16 years old, unmarried, no children"
+    - name: profile-b
+      caption: "22 years old, unmarried, no children"
+    - name: profile-c
+      caption: "22 years old, married, no children"
+    - name: profile-d
+      caption: "22 years old, married, 1 child"
+    - name: profile-e
+      caption: "28 years old, married, 1 child"
+
+- title: "Kendi's Community"
+  note: "How many women in her community use family planning."
+  cards:
+    - name: community-most
+      caption: "Almost all women use family planning"
+    - name: community-half
+      caption: "About half of the women use family planning"
+    - name: community-few
+      caption: "Almost no women use family planning"
+
+- title: "Kendi's Religious Leader"
+  note: "What her religious leader says about family planning."
+  cards:
+    - name: leader-support
+      caption: "Supports it as a responsible way to honor God's gift of family"
+    - name: leader-silent
+      caption: "Says nothing about it"
+    - name: leader-against
+      caption: "Opposes it as a lack of trust in God's plan"
+
+- title: "Kendi's Reflection"
+  note: "The scripture passage she reflects on."
+  cards:
+    - name: scripture-support
+      caption: "1 Timothy 5:8: called to care for her children"
+    - name: scripture-none
+      caption: "No specific scripture passage"
+    - name: scripture-against
+      caption: "Genesis 1:28: called to have many children"

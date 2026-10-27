@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
+<head>
+{% include head.html %}
+</head>
+
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+{% include header.html %}
+
+<main id="main" tabindex="-1">
+{{ content }}
+</main>
+
+{% include footer.html %}
+
+<script src="/assets/js/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+# Main menu, in display order
+- title: Home
+  url: /
+- title: Research
+  url: /research
+- title: Fieldwork
+  url: /fieldwork
+- title: Experience & Teaching
+  url: /teaching
+- title: CV
+  url: /cv
+- title: Data & Resources
+  url: /data

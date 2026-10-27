@@ -1,0 +1,68 @@
+# Job market box at the top of the homepage. Switch the box off with job_market: false in _config.yml.
+
+paper:
+  title: "Preaching Against the Choir: Religious Leaders and Reproductive Norms in Kenya"
+  # Replace this file (same name) to update the paper everywhere, including the short link eduardvandermerwe.com/jmp
+  pdf: /assets/Publications/Van_der_Merwe_JMP_PATC.pdf
+  appendix: /assets/Publications/Van_der_Merwe_JMP_PATC_Appendix.pdf
+  # Also shown on the Research page
+  abstract: >-
+    Religion shapes individuals' beliefs and behavior, but whether and how religious leaders can change social norms remains unclear.
+    I study this in the context of family planning in Meru County, Kenya, using primary data from reproductive-age women.
+    A central challenge to identification is that community behavior, scripture, and the stance of religious leaders are entangled in observed choices.
+    Using a randomized vignette experiment that independently varies these forces, I disentangle them and identify the weight women place on each
+    in a discrete-choice model with social interactions. I show that religious leaders influence women's decisions through two distinct channels.
+    First, they directly shift women's utility. Their support for family planning increases women's willingness to adopt it, and this effect is larger
+    than the corresponding effect of opposition. Second, religious leaders alter how women respond to the behavior of other women in their community.
+    When a leader takes an explicit position, women place less weight on others' behavior. As a result, religious messages have their largest effects
+    when they run counter to prevailing community behavior. I corroborate the experimental findings at scale using difference-in-differences estimates
+    from a faith-based family-planning program, showing that program effects are largest in places where religious leaders are more trusted.
+  # Talks on this paper, shown under the abstract. Delete "upcoming: true" once a talk has taken place.
+  presentations:
+    - name: Rice University Brown Bag
+    - name: ASREC Conference
+    - name: IRES Workshop
+    - name: ASREC Europe
+    - name: Florida State University Applied Microeconomics Workshop (invited)
+    - name: Southern Economic Association Annual Meeting
+      upcoming: true
+
+# Buttons beside CV on the homepage, e.g. "- name: Research Statement" with "file: /assets/....pdf".
+# A statement's button appears once its file exists; until then it shows "Coming Soon". None are listed for now.
+statements: []
+
+# Shown in two columns, filled row by row, like the CV: Calvi | Perrigne, then Cunha | Ecklund
+references:
+  - name: Rossella Calvi
+    note: Chair
+    titles:
+      - Associate Professor of Economics
+      - Department of Economics, Rice University
+    url: https://sites.google.com/site/rossellacalvi2/home
+    email: Rossella.Calvi@rice.edu
+  - name: Isabelle Perrigne
+    titles:
+      - Reginald Henry Hargrove Chair in Economics
+      - Department of Economics, Rice University
+    url: https://sites.google.com/view/iperrigne/home
+    email: iperrigne@gmail.com
+  - name: Flávio Cunha
+    titles:
+      - Ervin K. Zingler Chair of Economics
+      - Director, Center for Economic Mobility, Kinder Institute for Urban Research
+      - Department of Economics, Rice University
+    url: https://flaviocunha.com
+    email: Flavio.Cunha@rice.edu
+  - name: Elaine Howard Ecklund
+    titles:
+      - Herbert S. Autrey Chair in Social Sciences
+      - Director, Boniuk Institute
+      - Department of Sociology, Rice University
+    url: https://www.elainehowardecklund.com
+    email: ehe@rice.edu
+
+placement:
+  name: Xun Tang
+  title: Placement Officer
+  url: https://www.tang-xun.com
+  email: xun.tang@rice.edu

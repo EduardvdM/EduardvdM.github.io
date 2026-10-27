@@ -1,97 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
-	<meta name="author"      content="Eduard van der Merwe">
-	<meta name="robots"      content="noindex">
-
-	<title>Page Not Found | Eduard van der Merwe</title>
-
-	<!-- Absolute paths so this page also works for missing URLs in subfolders -->
-	<link rel="icon" href="/favicon.ico" sizes="48x48">
-	<link rel="icon" type="image/png" sizes="192x192" href="/assets/images/icons/favicon-192.png">
-	<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
-
-	<!-- Bootstrap -->
-	<link href="/assets/css/bootstrap.css" rel="stylesheet">
-	<!-- Custom styles -->
-	<link rel="stylesheet" href="/assets/css/styles.css">
-
-</head>
-
-<body>
-
-<!-- 2. HEADER -->
-<header id="header">
-
-	<!-- IMAGE AND TITLE -->
-	<div id="head" class="parallax">
-		<h1 id="logo" class="text-center">
-			<span class="title"><a href="/">Eduard van der Merwe</a></span>
-			<span class="tagline">PhD Candidate in Economics<br>
-			Rice University</span>
-		</h1>
-	</div>
-
-	<!-- NAVIGATION BAR -->
-	<nav class="navbar navbar-default">
-		<div class="container-fluid">
-
-			<div class="navbar-collapse">
-				<ul class="nav navbar-nav">
-					<li><a href="/">Home</a></li>
-					<li><a href="/research.html">Research</a></li>
-					<li><a href="/teaching.html">Experience</a></li>
-					<li><a href="/cv.html">CV</a></li>
-					<li><a href="/data.html">Data &amp; Resources</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-
-</header> <!-- close header -->
-
-<!-- 3. NOT FOUND -->
-<main id="main">
-	<div class="container">
-		<div class="row section topspace bottomspace" style="padding: 5px 20px;">
-			<div class="col-xs-12">
-				<h5 class="section-title"><span>Page Not Found</span></h5>
-				<p>Sorry, this page does not exist or has moved.
-				You can go back to the <a href="/">home page</a>, see my <a href="/research.html">research</a>,
-				or <a href="mailto:e.vdmerwe@rice.edu">email me</a> if you followed a broken link.</p>
-			</div>
+---
+layout: default
+title: Page Not Found
+description: "This page does not exist or has moved."
+permalink: /404.html
+noindex: true
+---
+<div class="container">
+	<div class="row section topspace bottomspace page-pad">
+		<div class="col-xs-12">
+			<h2 class="section-title">Page Not Found</h2>
+			<p>Sorry, this page does not exist or has moved.
+			You can go back to the <a href="/">home page</a>, see my <a href="/research">research</a>,
+			or <a href="mailto:e.vdmerwe@rice.edu">email me</a> if you followed a broken link.</p>
 		</div>
 	</div>
-</main> <!-- close main body -->
-
-<!-- 4. FOOTER -->
-<footer id="footer">
-	<div class="container">
-		<div class="row">
-
-			<!-- CONTACT INFORMATION -->
-			<div class="col-xs-12 col-sm-4 widget">
-				<h3 class="widget-title">Contact</h3>
-				<div class="widget-body">
-					<p class="text-left">
-						<a href="mailto:e.vdmerwe@rice.edu">e.vdmerwe@rice.edu</a><br>
-						<a href="https://economics.rice.edu">Rice University, Houston, TX, USA</a>
-					</p>
-				</div>
-			</div>
-
-			<!-- COPYRIGHT -->
-			<div class="col-xs-12 col-sm-4 col-sm-offset-4 widget footer-copyright">
-				<div class="widget-body">
-					<p>Copyright &copy; 2026, Eduard van der Merwe</p>
-				</div>
-			</div>
-
-		</div> <!-- close row -->
-	</div> <!-- close container -->
-</footer> <!-- close footer -->
-
-</body>
-</html>
+</div>

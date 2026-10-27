@@ -1,0 +1,87 @@
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="{{ site.title }}">
+
+	{%- if page.full_title %}
+		{%- assign page_title = page.title %}
+	{%- else %}
+		{%- assign page_title = page.title | append: " | " | append: site.title %}
+	{%- endif %}
+
+	<title>{{ page_title | escape }}</title>
+	<meta name="description" content="{{ page.description | escape }}">
+	{%- if page.noindex %}
+	<meta name="robots" content="noindex">
+	{%- else %}
+	<link rel="canonical" href="{{ page.url | absolute_url }}">
+	{%- endif %}
+
+	<!-- Link previews (LinkedIn, X, messaging apps); a page can set its own image and image_alt in its front matter -->
+	<meta property="og:title" content="{{ page_title | escape }}">
+	<meta property="og:description" content="{{ page.description | escape }}">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="{{ page.url | absolute_url }}">
+	<meta property="og:site_name" content="{{ site.title }}">
+	<meta property="og:image" content="{{ page.image | default: '/assets/images/social-preview.jpg' | absolute_url }}">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta property="og:image:alt" content="{{ page.image_alt | default: 'Eduard van der Merwe, PhD Candidate in Economics, Rice University' | escape }}">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="{{ page_title | escape }}">
+	<meta name="twitter:description" content="{{ page.description | escape }}">
+	<meta name="twitter:image" content="{{ page.image | default: '/assets/images/social-preview.jpg' | absolute_url }}">
+	<meta name="twitter:image:alt" content="{{ page.image_alt | default: 'Eduard van der Merwe, PhD Candidate in Economics, Rice University' | escape }}">
+
+	<!-- Icons for browser tabs, Google results and home screens -->
+	<link rel="icon" href="/favicon.ico" sizes="48x48">
+	<link rel="icon" type="image/png" sizes="192x192" href="/assets/images/icons/favicon-192.png">
+	<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+
+	<!-- Font: Lora is served from this site; the upright file is needed on every page, so fetch it early -->
+	<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/lora-normal-latin.woff2" crossorigin>
+
+	<!-- Header photo: start downloading straight away, at the size that matches the screen -->
+	<link rel="preload" as="image" href="/assets/images/header-meru-1200.jpg" media="(max-width: 767px)" fetchpriority="high">
+	<link rel="preload" as="image" href="/assets/images/header-meru-1600.jpg" media="(min-width: 768px) and (max-width: 1439px)" fetchpriority="high">
+	<link rel="preload" as="image" href="/assets/images/header-meru.jpg" media="(min-width: 1440px)" fetchpriority="high">
+
+	<!-- Styles -->
+	<link rel="stylesheet" href="/assets/css/bootstrap.css">
+	<link rel="stylesheet" href="/assets/css/styles.css">
+
+	{%- if page.url == "/" %}
+
+	<!-- Structured data: tells Google the site name and who the site is about -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@graph": [
+			{
+				"@type": "WebSite",
+				"@id": "https://eduardvandermerwe.com/#website",
+				"url": "https://eduardvandermerwe.com/",
+				"name": "Eduard van der Merwe",
+				"publisher": { "@id": "https://eduardvandermerwe.com/#person" }
+			},
+			{
+				"@type": "Person",
+				"@id": "https://eduardvandermerwe.com/#person",
+				"name": "Eduard van der Merwe",
+				"url": "https://eduardvandermerwe.com/",
+				"image": "https://eduardvandermerwe.com/assets/images/headshot_EvdM.jpg",
+				"jobTitle": "PhD Candidate in Economics",
+				"affiliation": { "@type": "CollegeOrUniversity", "name": "Rice University", "url": "https://www.rice.edu" },
+				"alumniOf": { "@type": "CollegeOrUniversity", "name": "University of Pretoria", "url": "https://www.up.ac.za" },
+				"knowsAbout": ["Development Economics", "Economics of Culture and Religion", "Applied Microeconomics"],
+				"email": "mailto:e.vdmerwe@rice.edu",
+				"sameAs": [
+					"https://scholar.google.com/citations?user=xDPxZXcAAAAJ",
+					"https://ssrn.com/author=6691394",
+					"https://orcid.org/0000-0002-6055-3382",
+					"https://www.linkedin.com/in/eduard-vdm/"
+				]
+			}
+		]
+	}
+	</script>
+	{%- endif %}

@@ -1,4 +1,42 @@
 /* ============================================================
+   FONTS
+   Lora, served from this site (SIL Open Font License, see assets/fonts/OFL.txt).
+   One variable file per style covers every weight from 400 to 700.
+   ============================================================ */
+@font-face {
+  font-family: "Lora";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(../fonts/lora-normal-latin-ext.woff2) format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Lora";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(../fonts/lora-normal-latin.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Lora";
+  font-style: italic;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(../fonts/lora-italic-latin-ext.woff2) format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Lora";
+  font-style: italic;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(../fonts/lora-italic-latin.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* ============================================================
    GLOBAL BASE
    ============================================================ */
 html {
@@ -6,7 +44,7 @@ html {
 }
 body {
   font-size: 1rem;
-  font-family: "Lora", "Merriweather", Georgia, serif;
+  font-family: "Lora", Georgia, "Times New Roman", serif;
   color: #666666;
   padding: 0;
 }
@@ -15,6 +53,9 @@ body {
 }
 .bottomspace {
   margin-bottom: 30px;
+}
+.page-pad {
+  padding: 5px 20px;
 }
 
 /* CV page vertical spacing */
@@ -36,39 +77,56 @@ body {
 }
 
 /* ============================================================
+   ACCESSIBILITY
+   ============================================================ */
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -100px;
+  z-index: 2000;
+  padding: 10px 16px;
+  background: #2A6049;
+  color: #ffffff;
+  border-radius: 0 0 4px 4px;
+}
+.skip-link:focus {
+  top: 0;
+  color: #ffffff;
+}
+#main:focus {
+  outline: none;
+}
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 3px solid #B7410E;
+  outline-offset: 2px;
+}
+#footer a:focus-visible,
+.skip-link:focus-visible {
+  outline-color: #ffffff;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================================
    NAVIGATION
    ============================================================ */
 .navbar {
   border-width: 1px 0;
   border-radius: 0;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-@media (max-width: 576px) {
-  .navbar {
-    display: flex !important;
-    flex-direction: column !important;
-  }
-  .navbar ul {
-    display: flex;
-    flex-direction: column;
-  }
-  .navbar ul li {
-    width: 100%;
-  }
-}
-.navbar.stick {
-  position: fixed;
-  top: 0;
-  left: 0;
-  opacity: .85;
-  z-index: 1000;
 }
 .navbar-collapse {
   border-radius: 0;
-  font-family: "Lora", "Merriweather", Georgia, serif;
+  font-family: inherit;
   font-weight: 400;
   font-variant: small-caps;
   font-size: 1.15em;
@@ -84,6 +142,11 @@ body {
 }
 .navbar-collapse .navbar-nav > li > a {
   padding: 20px 30px;
+}
+@media (max-width: 991px) {
+  .navbar-collapse .navbar-nav > li > a {
+    padding: 20px 16px;
+  }
 }
 .navbar-default {
   background-color: #ffffff;
@@ -104,25 +167,29 @@ body {
   background-color: #ffffff;
   border-bottom: 2px solid #2A6049;
 }
-.navbar-default .navbar-toggle {
-  border-color: #666666;
-}
-.navbar-default .navbar-toggle:hover,
-.navbar-default .navbar-toggle:focus {
-  background-color: #ffffff;
-}
-.navbar-default .navbar-toggle .icon-bar {
-  background-color: #333333;
-}
-.navbar-default .navbar-collapse,
-.navbar-default .navbar-form {
+.navbar-default .navbar-collapse {
   border-color: #cccccc;
 }
-.navbar-default .navbar-nav > .open > a,
-.navbar-default .navbar-nav > .open > a:hover,
-.navbar-default .navbar-nav > .open > a:focus {
-  background-color: #ffffff;
-  color: #000000;
+
+/* Phones: every link stays visible, wrapped into centred rows */
+@media (max-width: 767px) {
+  .navbar {
+    min-height: 0;
+  }
+  .navbar-collapse {
+    padding: 4px 0;
+    box-shadow: none;
+    font-size: 1.05em;
+  }
+  .navbar-collapse .navbar-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+  }
+  .navbar-collapse .navbar-nav > li > a {
+    padding: 12px;
+  }
 }
 
 /* ============================================================
@@ -137,14 +204,9 @@ ol {
   line-height: 1.6em;
   margin: 0 0 30px 0;
 }
-blockquote {
-  padding: 10px 20px;
-  margin: 0 0 30px;
-  border-left: 5px solid #eee;
-}
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: "Lora", "Merriweather", Georgia, serif;
+  font-family: inherit;
   font-weight: 400;
   color: #333333;
 }
@@ -160,10 +222,11 @@ a {
 a:hover {
   color: #8C320A;
 }
-.lead {
-  font-weight: 300;
-  font-size: 1.3125rem;
-  font-style: italic;
+/* Underline links inside running text so they don't rely on colour alone */
+#main p a,
+.data-sources a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 .quotestyle {
   font-weight: 300;
@@ -177,38 +240,57 @@ a:hover {
 }
 .abstract-text {
   font-size: 0.875rem;
-  text-align: justify;
+  text-align: left;
   margin: 8px 0 0;
   line-height: 1.65;
   color: #666666;
 }
-.data-text {
-  font-size: 0.875rem;
-  text-align: justify;
-  list-style: circle;
-  margin: 6px 0 4px 16px;
+.disclaimer {
+  font-size: 0.75rem;
+  text-align: left;
+  padding: 10px 20px;
+  margin: 0 0 30px;
+  border-left: 5px solid #eeeeee;
 }
 
 /* ============================================================
    HEADER
    ============================================================ */
+/* Meru County panorama; --head-pos-y keeps the name on the sky with the horizon along the bottom.
+   site.js reads the same variable for the scroll effect. */
 #head {
-  background: #f4f4f4 url(../images/sunset.jpeg) top center;
+  --head-pos-y: 38%;
+  background: #dfe8ef url(../images/header-meru-1600.jpg) no-repeat;
   background-size: cover;
-  color: #7C7C7C;
+  background-position: center var(--head-pos-y);
   padding: 30px 0 35px 0;
-  background-attachment: scroll;
-  background-repeat: no-repeat;
 }
-@media (max-width: 400px) {
+/* Smaller photo for phones, full-size photo only on wide screens (matching preloads in head.html) */
+@media (max-width: 767px) {
   #head {
-    background-size: 130%;
+    background-image: url(../images/header-meru-1200.jpg);
   }
 }
+/* Wide screens: the banner shows a thinner slice of the photo, so move the crop down to include more
+   landscape while the name still sits on the sky */
+@media (min-width: 1440px) {
+  #head {
+    --head-pos-y: 47%;
+    background-image: url(../images/header-meru.jpg);
+  }
+}
+#logo {
+  margin: 20px 0 0;
+  line-height: 1.1;
+}
 #head .title {
-  font-family: "Lora", "Merriweather", Georgia, serif;
   font-size: 2.8rem;
   font-variant: small-caps;
+  color: #000000;
+  text-decoration: none;
+}
+#head .title:hover {
+  color: #000000;
 }
 @media (max-width: 768px) {
   #head .title {
@@ -225,94 +307,53 @@ a:hover {
     font-size: 1.75rem;
   }
 }
-#head .title a {
-  text-decoration: none;
-  color: #000000;
-}
 #head .tagline {
-  display: block;
-  font-family: "Lora", "Merriweather", Georgia, serif;
   font-variant: small-caps;
   font-size: 1.2rem;
   line-height: 1.3em;
   color: #000000;
-  margin: 5px 0 0;
-}
-#head .tagline b {
-  font-weight: normal;
-}
-#head .tagline a {
-  color: #000000;
+  margin: 5px 0 10px;
 }
 @media (max-width: 768px) {
   #head .tagline {
-    font-size: 0.8rem;
-    line-height: 1.1em;
-  }
-}
-@media (max-width: 576px) {
-  #head .tagline {
-    font-size: 0.75rem;
-    line-height: 1em;
-  }
-}
-@media (max-width: 375px) {
-  #head .tagline {
-    font-size: 0.7rem;
-    line-height: 1em;
-  }
-}
-.home #head {
-  padding: 50px 0;
-  background: #f4f4f4 url(../images/sunset-full.jpeg) top center;
-  background-size: cover;
-  color: #7C7C7C;
-  background-attachment: scroll;
-  background-repeat: no-repeat;
-}
-@media (max-width: 400px) {
-  .home #head {
-    background-size: 130%;
-  }
-}
-.home #head .title {
-  font-size: 3.5rem;
-}
-@media (max-width: 768px) {
-  .home #head .title {
-    font-size: 2.5rem;
-  }
-}
-@media (max-width: 576px) {
-  .home #head .title {
-    font-size: 2rem;
-  }
-}
-@media (max-width: 375px) {
-  .home #head .title {
-    font-size: 1.75rem;
-  }
-}
-.home #head .tagline {
-  font-size: 1.3rem;
-  margin: 15px 0 0;
-}
-@media (max-width: 768px) {
-  .home #head .tagline {
     font-size: 0.9rem;
-    margin: 10px 0 0;
+    line-height: 1.2em;
   }
 }
 @media (max-width: 576px) {
-  .home #head .tagline {
-    font-size: 0.8rem;
-    margin: 8px 0 0;
+  #head .tagline {
+    font-size: 0.85rem;
   }
 }
-@media (max-width: 375px) {
-  .home #head .tagline {
-    font-size: 0.75rem;
-    margin: 5px 0 0;
+
+/* Inner pages: slimmer banner so content starts higher; the full banner stays on the homepage */
+#head.head--compact {
+  --head-pos-y: 44%;
+  padding: 8px 0 14px 0;
+}
+.head--compact #logo {
+  margin: 10px 0 0;
+}
+#head.head--compact .title {
+  font-size: 2.1rem;
+}
+#head.head--compact .tagline {
+  font-size: 1rem;
+  margin: 4px 0 4px;
+}
+/* Wide screens: the slimmer banner needs the crop lower still to show a strip of landscape.
+   Kept after the rule above so it takes precedence. */
+@media (min-width: 1440px) {
+  #head.head--compact {
+    --head-pos-y: 48%;
+  }
+}
+@media (max-width: 576px) {
+  #head.head--compact .title {
+    font-size: 1.6rem;
+  }
+  #head.head--compact .tagline {
+    font-size: 0.8rem;
   }
 }
 
@@ -321,6 +362,14 @@ a:hover {
    ============================================================ */
 img {
   max-width: 100%;
+}
+/* Icons from assets/images/icons.svg: sized by the surrounding text and drawn in its colour */
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+  fill: currentColor;
 }
 .featured {
   font-size: 1rem;
@@ -347,6 +396,7 @@ img {
   font-weight: 700;
   font-variant: small-caps;
   font-size: 1.3rem;
+  line-height: 1.1;
   letter-spacing: 1.5px;
   color: #2A6049;
   border-bottom: 2px solid #2A6049;
@@ -355,14 +405,6 @@ img {
 .section-title a {
   color: #2A6049;
 }
-.section-title span {
-  display: inline;
-  position: static;
-}
-.section-title span:before,
-.section-title span:after {
-  display: none;
-}
 .section-title--center {
   text-align: center;
 }
@@ -370,29 +412,47 @@ img {
 /* ============================================================
    FOOTER
    ============================================================ */
+/* Savanna line drawing spans the footer width and runs behind the text;
+   capped on very wide screens so the tallest shapes are never cut off */
 #footer {
-  background: #2A6049;
-  padding: 30px 0 0 0;
-  font-size: 0.75rem;
-  color: #fff;
+  background: #2A6049 url(../images/footer-savanna.svg) no-repeat center bottom;
+  background-size: min(100%, 1600px) auto;
+  padding: 30px 0 70px 0;
+  font-size: 0.875rem;
+  color: #ffffff;
+}
+@media (max-width: 767px) {
+  #footer {
+    background-size: 900px auto;
+    padding-bottom: 60px;
+  }
 }
 #footer a {
-  color: #fff;
+  color: #ffffff;
 }
 #footer a:hover {
-  color: #C6B593;
+  color: #F2E8CC;
 }
-#footer h3.widget-title {
+#footer .widget-title {
   font-size: 0.9375rem;
+  font-weight: 400;
   text-transform: uppercase;
   color: #ffffff;
   margin: 0 0 10px;
 }
+.footer-cv {
+  margin: 0 0 10px;
+}
+.footer-cv .icon {
+  margin-right: 4px;
+}
 .follow-me-icons {
   font-size: 1.875rem;
 }
-.follow-me-icons i {
-  display: inline-block;
+.follow-me-icons a {
+  text-decoration: none;
+}
+.follow-me-icons .icon {
   margin: 0 12px 0 0;
 }
 
@@ -439,8 +499,9 @@ img {
   text-decoration: underline;
   color: #546A79;
 }
+/* inline-block keeps short labels like "Revise & Resubmit" on one line */
 .paper-status-tag {
-  display: inline;
+  display: inline-block;
   font-size: 0.8125rem;
   font-weight: 600;
   color: #B7410E;
@@ -451,39 +512,153 @@ img {
 }
 .paper-names {
   font-size: 0.8125rem;
-  color: #818589;
+  color: #5F6368;
 }
 .paper-names a {
-  color: #818589;
+  color: #5F6368;
+  text-decoration: none;
 }
 .paper-names a:hover {
   color: #8C320A;
+  text-decoration: none;
 }
-.paper-meta {
+.paper-fieldwork {
   font-size: 0.8125rem;
-  color: #818589;
+  color: #5F6368;
 }
-.paper-meta a {
+.paper-fieldwork a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.paper-fieldwork a:hover {
   color: #B7410E;
 }
-.paper-meta a:hover {
-  color: #8C320A;
+.paper-fieldwork .icon {
+  color: #2A6049;
+  margin-right: 3px;
+}
+/* Tablets and phones: the status tag gets its own line under the co-authors, so every paper reads
+   title, co-authors, status, then buttons. Wider screens keep the tag beside the title. */
+@media (max-width: 991px) {
+  .research-list > li {
+    display: flex;
+    flex-direction: column;
+  }
+  .research-list .paper-name { order: 1; }
+  .research-list .paper-names { order: 2; }
+  .research-list .paper-status-tag {
+    order: 3;
+    align-self: flex-start;
+    margin-left: 0;
+  }
+  .research-list .paper-fieldwork { order: 4; }
+  .research-list .paper-actions { order: 5; }
+}
+/* Linking from a homepage theme card: leave room above and briefly tint the paper */
+.research-list > li {
+  scroll-margin-top: 80px;
+}
+.research-list > li:target {
+  animation: paper-highlight 2.5s ease-out;
+}
+@keyframes paper-highlight {
+  from { background-color: #EAF1ED; }
+  to { background-color: transparent; }
+}
+
+/* Work in progress numbered [01], [02], ... (the numbers are skipped by screen readers) */
+.research-list--numbered {
+  counter-reset: wip;
+}
+/* The number hangs in the left margin so wrapped titles, tags and authors all line up */
+.research-list--numbered > li {
+  counter-increment: wip;
+  position: relative;
+  padding-left: 2.6em;
+}
+.research-list--numbered > li::before {
+  content: "[" counter(wip, decimal-leading-zero) "]";
+  content: "[" counter(wip, decimal-leading-zero) "]" / "";
+  position: absolute;
+  left: 0;
+  top: 0.15em;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #2A6049;
+}
+
+/* Row of small buttons under each paper: PDF, SSRN, Appendix, Journal, Data, Abstract */
+.paper-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 6px;
+}
+/* Abstract and Info toggles use the same pill style everywhere */
+.paper-btn,
+details.abstract-toggle > summary {
+  display: inline-block;
+  margin: 0 6px 4px 0;
+  padding: 1px 11px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 1.7;
+  letter-spacing: 0.5px;
+  color: #B7410E;
+  background: #ffffff;
+  border: 1px solid #B7410E;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.paper-btn:hover,
+.paper-btn:focus,
+details.abstract-toggle > summary:hover,
+details[open].abstract-toggle > summary {
+  color: #ffffff;
+  background: #B7410E;
+  text-decoration: none;
+}
+.paper-actions details.abstract-toggle {
+  margin-top: 0;
+}
+/* Centred single button, used for Download CV */
+.paper-actions--center {
+  justify-content: center;
+}
+.paper-actions--center .paper-btn {
+  margin-right: 0;
+}
+/* Browsers that can style the abstract panel keep the Abstract button in the row and open the panel
+   full-width underneath; older browsers show the button on its own line, which still works */
+@supports selector(::details-content) {
+  .paper-actions details.abstract-toggle,
+  .experience-meta details.abstract-toggle {
+    display: contents;
+  }
+  .paper-actions details.abstract-toggle::details-content,
+  .experience-meta details.abstract-toggle::details-content {
+    flex-basis: 100%;
+    order: 1;
+  }
+}
+/* Space between the organisation line and the Info button (look set with .paper-btn above) */
+details.abstract-toggle {
+  margin-top: 6px;
 }
 details.abstract-toggle > summary {
-  font-size: 0.8125rem;
-  font-weight: 500;
-  color: #B7410E;
-  font-style: italic;
   cursor: pointer;
   user-select: none;
   list-style: none;
-  letter-spacing: 0.5px;
 }
 details.abstract-toggle > summary::-webkit-details-marker {
   display: none;
 }
 details.abstract-toggle > summary::after {
-  content: ' ▼';
+  content: "▼";
+  content: "▼" / "";
   display: inline-block;
   font-size: 0.9em;
   margin-left: 5px;
@@ -492,9 +667,23 @@ details.abstract-toggle > summary::after {
 details[open].abstract-toggle > summary::after {
   transform: rotate(180deg);
 }
+/* Abstracts and Info panels slide open instead of appearing at once */
+@supports selector(::details-content) {
+  :root {
+    interpolate-size: allow-keywords;
+  }
+  details.abstract-toggle::details-content {
+    height: 0;
+    overflow: clip;
+    transition: height 0.3s ease, content-visibility 0.3s allow-discrete;
+  }
+  details[open].abstract-toggle::details-content {
+    height: auto;
+  }
+}
 
 /* ============================================================
-   EXPERIENCE LIST (Teaching page — mirrors research-list)
+   EXPERIENCE LIST (Teaching page and grants — mirrors research-list)
    ============================================================ */
 .experience-list {
   padding-left: 20px;
@@ -520,7 +709,7 @@ details[open].abstract-toggle > summary::after {
   letter-spacing: 0.5px;
 }
 .experience-dates {
-  display: inline;
+  display: inline-block;
   font-size: 0.8125rem;
   font-weight: 600;
   color: #B7410E;
@@ -531,7 +720,81 @@ details[open].abstract-toggle > summary::after {
 }
 .experience-org {
   font-size: 0.8125rem;
-  color: #818589;
+  color: #5F6368;
+}
+.experience-org a {
+  color: #5F6368;
+  text-decoration: none;
+}
+.experience-org a:hover {
+  color: #8C320A;
+  text-decoration: none;
+}
+/* Phones: the dates get their own line directly under the role, lined up with it */
+@media (max-width: 767px) {
+  .experience-dates {
+    display: block;
+    margin-left: 0;
+  }
+}
+/* Organisation line with the Info button at its end; the bullet points open full-width underneath */
+.experience-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 10px;
+}
+.experience-meta details.abstract-toggle {
+  margin-top: 0;
+}
+.experience-meta details.abstract-toggle > summary {
+  margin: 2px 0;
+}
+/* Fellowships, grants & awards. Phones keep the usual layout (name and year, awarding body below);
+   wider screens put each on one line as "Name | Awarding body  Year" */
+.experience-list--compact > li {
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+}
+.experience-list--compact .experience-org {
+  display: block;
+}
+@media (min-width: 768px) {
+  .experience-list--compact > li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+  }
+  .experience-list--compact .experience-org {
+    order: 1;
+    font-size: 0.875rem;
+  }
+  .experience-list--compact .experience-org::before {
+    content: "|";
+    content: "|" / "";
+    margin: 0 8px;
+    color: #999999;
+  }
+  .experience-list--compact .experience-dates {
+    order: 2;
+  }
+}
+/* Conferences: the year sits in a narrow column beside that year's list */
+.experience-list--years > li {
+  display: grid;
+  grid-template-columns: 3.5em 1fr;
+  column-gap: 12px;
+}
+.experience-list--years .detail-list {
+  margin: 0;
+}
+/* Bullet points inside Info toggles and the presentations list */
+.detail-list {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: #666666;
+  margin: 6px 0 0;
+  padding-left: 18px;
 }
 .experience-award {
   font-size: 0.8125rem;
@@ -539,40 +802,1120 @@ details[open].abstract-toggle > summary::after {
 }
 
 /* ============================================================
-   HOME PAGE — ABOUT ME CONTENT
+   HOME PAGE — RESEARCH THEME CARDS
    ============================================================ */
-.about-inner {
-  text-align: justify;
+.theme-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
   padding: 5px 20px;
+  margin-bottom: 30px;
 }
-@media (max-width: 767px) {
-  .about-inner {
-    text-align: justify;
-    padding-left: 20px;
-    padding-right: 20px;
+@media (min-width: 768px) {
+  .theme-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.theme-card {
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  border-top: 3px solid #2A6049;
+  border-radius: 6px;
+  transition: translate 0.25s ease, box-shadow 0.25s ease;
+}
+.theme-card:hover {
+  translate: 0 -3px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+.theme-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 12px;
+  border-radius: 50%;
+  background: #EAF1ED;
+  color: #2A6049;
+  font-size: 1.1rem;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+.theme-card:hover .theme-icon {
+  background: #2A6049;
+  color: #ffffff;
+}
+.theme-title {
+  margin: 0 0 8px;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #333333;
+}
+.theme-text {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   SCROLL ANIMATIONS
+   site.js adds .reveal only when JavaScript runs and the visitor has not asked for reduced motion,
+   so content is never hidden otherwise
+   ============================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease var(--reveal-delay, 0s),
+              transform 0.6s ease var(--reveal-delay, 0s),
+              translate 0.25s ease,
+              box-shadow 0.25s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+@media print {
+  .reveal {
+    opacity: 1;
+    transform: none;
   }
 }
 
 /* ============================================================
-   SIDEBAR (Data page)
+   HOME PAGE — ABOUT ME AND PORTRAIT
    ============================================================ */
-.sidebar a {
-  color: #36454F;
+.about-fields {
+  color: #333333;
 }
-.sidebar a:hover {
+/* Whole theme card is a link to a related paper; hover look is set on .theme-card above */
+a.theme-card {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ============================================================
+   HOME PAGE — JOB MARKET BOX AND FIELDWORK TEASER
+   ============================================================ */
+.jm-box {
+  margin: 0 20px 34px;
+  padding: 18px 24px 20px;
+  background: #F4F8F6;
+  border-left: 5px solid #B7410E;
+  border-radius: 6px;
+}
+.jm-box .finding-label {
+  display: block;
+}
+.jm-paper {
+  margin: 4px 0 8px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #333333;
+}
+.jm-paper a {
+  color: inherit;
+  text-decoration: none;
+}
+.jm-paper a:hover,
+.jm-paper a:focus {
   color: #B7410E;
 }
-.sidebar .widget ul {
+.jm-subtitle {
+  margin: 20px 0 10px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  font-variant: small-caps;
+  letter-spacing: 1px;
+  color: #2A6049;
+}
+.jm-people {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px 24px;
+  margin: 0;
+  padding: 0;
   list-style: none;
-  padding-left: 0;
 }
-.sidebar .widget ul li {
-  padding: 3px 0;
+@media (min-width: 600px) {
+  .jm-people {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
-.sidebar .widget ul li i {
-  font-size: 0.8em;
-  margin-right: 6px;
-  width: 14px;
+/* Short introduction with a small photo; the text wraps around the photo */
+.home-intro {
+  display: flow-root;
+  margin: 0 20px 24px;
+}
+.home-intro img {
+  float: left;
+  width: 170px;
+  height: auto;
+  margin: 4px 28px 8px 0;
+  border-radius: 6px;
+}
+.home-intro p {
+  margin: 0 0 12px;
+  line-height: 1.7;
+}
+.home-intro p:last-child {
+  margin-bottom: 0;
+}
+.jm-people li,
+.jm-placement {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+.jm-detail,
+.jm-email {
+  display: block;
+}
+/* People and emails: grey with no underline, orange on hover, like co-author links */
+.jm-box a.jm-name,
+.jm-box a.jm-email {
+  color: #333333;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+.jm-box a.jm-name {
+  font-weight: 700;
+}
+.jm-box a.jm-email {
+  color: #666666;
+}
+.jm-box a.jm-name:hover,
+.jm-box a.jm-name:focus,
+.jm-box a.jm-email:hover,
+.jm-box a.jm-email:focus {
+  color: #B7410E;
+  text-decoration: none;
+}
+.jm-placement {
+  margin: 16px 0 0;
+}
+.jm-placement .jm-email {
+  display: inline;
+}
+/* Paper box has an orange edge; the references box below it a green one */
+.jm-box--paper {
+  margin-bottom: 20px;
+}
+.jm-box--refs {
+  border-left-color: #2A6049;
+}
+.jm-box--refs .jm-subtitle {
+  margin-top: 0;
+}
+/* CV and statement buttons under the research fields */
+.home-intro .home-intro-actions {
+  margin-top: 4px;
+}
+/* Where the job market paper has been presented, one line for past talks and one for upcoming ones */
+.jm-talks {
+  margin-top: 12px;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #333333;
+}
+.jm-talks span {
+  display: block;
+}
+.home-fieldwork {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px 28px;
+  align-items: center;
+  padding: 5px 20px;
+}
+@media (min-width: 768px) {
+  .home-fieldwork {
+    grid-template-columns: 2fr 3fr;
+  }
+}
+.home-fieldwork img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+.home-fieldwork-text p {
+  margin: 0 0 12px;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: #333333;
+}
+@media (max-width: 767px) {
+  .home-intro {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .home-intro img {
+    width: 90px;
+    margin: 4px 14px 6px 0;
+  }
+  .jm-box {
+    margin-right: 0;
+    margin-left: 0;
+    padding: 16px;
+  }
+  .home-fieldwork {
+    padding: 0;
+  }
+}
+
+/* ============================================================
+   DATA & RESOURCES PAGE
+   ============================================================ */
+/* "On this page" links: green pills that glide to each section (instant for reduced motion) */
+html {
+  scroll-behavior: smooth;
+}
+.page-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 28px;
+}
+.page-jump a {
+  padding: 3px 14px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: #2A6049;
+  background: #EAF1ED;
+  border: 1px solid #2A6049;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.page-jump a:hover,
+.page-jump a:focus {
+  color: #ffffff;
+  background: #2A6049;
+  text-decoration: none;
+}
+#main .section-title[id] {
+  scroll-margin-top: 20px;
+}
+/* Section heading with a small back-to-top arrow on its right */
+.section-head {
+  position: relative;
+}
+.section-head .section-title {
+  padding-right: 44px;
+}
+.to-top {
+  position: absolute;
+  top: -3px;
+  right: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  font-size: 1rem;
+  line-height: 1;
+  color: #2A6049;
+  background: #EAF1ED;
+  border: 1px solid #2A6049;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.to-top:hover,
+.to-top:focus {
+  color: #ffffff;
+  background: #2A6049;
+  text-decoration: none;
+}
+.data-grid,
+.resource-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 0 20px;
+  margin-bottom: 30px;
+}
+@media (min-width: 768px) {
+  .data-grid,
+  .resource-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .data-card--wide {
+    grid-column: 1 / -1;
+  }
+}
+@media (max-width: 767px) {
+  .data-grid,
+  .resource-grid {
+    padding: 0;
+  }
+}
+.data-card,
+.resource-card {
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  border-top: 3px solid #2A6049;
+  border-radius: 6px;
+  scroll-margin-top: 80px;
+}
+/* Arriving from a Data button on the Research page briefly tints the card */
+.data-card:target {
+  animation: paper-highlight 2.5s ease-out;
+}
+.data-card-title {
+  margin: 0 0 4px;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #333333;
+}
+.data-card-meta {
+  margin: 0 0 10px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  font-variant: small-caps;
+  letter-spacing: 0.5px;
+  color: #B7410E;
+}
+.data-card-text {
+  margin: 0 0 12px;
+  font-size: 0.875rem;
+}
+.data-sources {
+  margin: 0 0 12px;
+  padding-left: 18px;
+  list-style: circle;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+.data-sources li {
+  margin-bottom: 4px;
+}
+/* Grey underlined links that only turn orange on hover, so the cards stay calm */
+.data-sources a {
+  color: inherit;
+}
+.data-sources a:hover {
+  color: #B7410E;
+}
+/* Not a link: a quiet dashed pill for materials that are on their way */
+.paper-btn--soon,
+.paper-btn--soon:hover {
+  color: #5F6368;
+  background: #f7f7f7;
+  border: 1px dashed #b5b5b5;
+  cursor: default;
+}
+.resource-card-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 10px;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: #333333;
+}
+.resource-card-title .theme-icon {
+  width: 36px;
+  height: 36px;
+  margin: 0;
+  font-size: 0.95rem;
+}
+.resource-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.resource-list li {
+  padding: 7px 0;
+  border-bottom: 1px solid #f0f0f0;
+  break-inside: avoid;
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+.resource-list li:last-child {
+  border-bottom: none;
+}
+/* Small type icon (dataset, article, book, podcast, website) in a column left of each source */
+.resource-list li {
+  display: grid;
+  grid-template-columns: 16px 1fr;
+  column-gap: 10px;
+  align-items: start;
+}
+.resource-icon {
+  justify-self: center;
+  margin-top: 4px;
+  font-size: 0.8rem;
+  color: #2A6049;
+}
+.resource-list a {
+  font-weight: 600;
+  color: #36454F;
+  text-decoration: none;
+}
+.resource-list a:hover {
+  color: #B7410E;
+  text-decoration: underline;
+}
+.resource-desc {
+  display: block;
+  font-size: 0.8125rem;
+  color: #5F6368;
+}
+
+/* ============================================================
+   FIELDWORK PAGE
+   ============================================================ */
+.fieldwork-intro {
+  padding: 0 20px;
+  margin-bottom: 26px;
+}
+.fieldwork-intro p {
+  margin: 0 0 12px;
+}
+/* Draft text still waiting for final wording */
+.placeholder-note {
+  padding: 8px 14px;
+  font-size: 0.8125rem;
+  color: #5F6368;
+  background: #f7f7f7;
+  border: 1px dashed #b5b5b5;
+  border-radius: 6px;
+}
+.is-placeholder {
+  font-style: italic;
+  color: #5F6368 !important;
+}
+
+/* At-a-glance numbers */
+.stat-strip {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 0 0 32px;
+  padding: 0 20px;
+  list-style: none;
+}
+@media (min-width: 768px) {
+  .stat-strip {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+@media (max-width: 767px) {
+  .stat-strip .stat-tile:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+}
+.stat-tile {
+  padding: 16px 10px;
   text-align: center;
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  border-top: 3px solid #2A6049;
+  border-radius: 6px;
+}
+.stat-number {
+  display: block;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.15;
+  color: #2A6049;
+}
+.stat-label {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.8125rem;
+  color: #5F6368;
+}
+
+/* Map and study design, side by side on wider screens */
+.fieldwork-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-bottom: 30px;
+  padding: 0 20px;
+}
+@media (min-width: 768px) {
+  .fieldwork-grid {
+    grid-template-columns: 2fr 3fr;
+  }
+}
+.fieldwork-card {
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  border-top: 3px solid #2A6049;
+  border-radius: 6px;
+}
+.fieldwork-card h3 {
+  margin: 0 0 12px;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: #333333;
+}
+.fieldwork-card p {
+  margin: 0 0 12px;
+  font-size: 0.875rem;
+}
+.fieldwork-map {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin: 0 auto;
+}
+.map-country {
+  fill: #EAF1ED;
+  stroke: #2A6049;
+  stroke-width: 1.2;
+  stroke-linejoin: round;
+}
+.map-county {
+  fill: #2A6049;
+  stroke: #ffffff;
+  stroke-width: 0.8;
+}
+.map-town {
+  fill: #B7410E;
+  stroke: #ffffff;
+  stroke-width: 2;
+}
+.map-city {
+  fill: #5F6368;
+}
+/* A white outline behind the letters keeps labels readable where they cross the shaded county */
+.map-label {
+  font-family: "Lora", Georgia, serif;
+  font-size: 12px;
+  fill: #333333;
+  paint-order: stroke;
+  stroke: #ffffff;
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+.map-label--town {
+  font-weight: 700;
+  fill: #B7410E;
+}
+.map-label--country {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  fill: #2A6049;
+}
+/* The three randomised story features */
+.design-factors {
+  margin: 0 0 12px;
+  padding: 0;
+  list-style: none;
+  counter-reset: factor;
+}
+.design-factors li {
+  position: relative;
+  margin-bottom: 8px;
+  padding: 8px 12px 8px 44px;
+  font-size: 0.875rem;
+  line-height: 1.45;
+  background: #F4F8F6;
+  border-radius: 6px;
+  counter-increment: factor;
+}
+.design-factors li::before {
+  content: counter(factor);
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  width: 22px;
+  height: 22px;
+  margin-top: -11px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 22px;
+  text-align: center;
+  color: #ffffff;
+  background: #2A6049;
+  border-radius: 50%;
+}
+.design-factors strong {
+  display: block;
+  color: #36454F;
+}
+.design-factors span {
+  display: block;
+  font-size: 0.8125rem;
+  color: #5F6368;
+}
+
+/* Timeline: a vertical list on phones, one row of steps on wide screens */
+.timeline {
+  margin: 0 0 30px;
+  padding: 0 20px;
+  list-style: none;
+}
+.timeline > li {
+  position: relative;
+  padding: 0 0 18px 30px;
+}
+.timeline > li::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  background: #2A6049;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px #EAF1ED;
+}
+.timeline > li::after {
+  content: "";
+  position: absolute;
+  top: 21px;
+  bottom: 0;
+  left: 5px;
+  width: 2px;
+  background: #d5e3dc;
+}
+.timeline > li:last-child::after {
+  display: none;
+}
+@media (min-width: 992px) {
+  .timeline:not(.timeline--vertical) {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 14px;
+  }
+  .timeline:not(.timeline--vertical) > li {
+    padding: 26px 6px 0 0;
+  }
+  .timeline:not(.timeline--vertical) > li::before {
+    top: 0;
+  }
+  .timeline:not(.timeline--vertical) > li::after {
+    top: 5px;
+    right: -14px;
+    bottom: auto;
+    left: 20px;
+    width: auto;
+    height: 2px;
+  }
+}
+.timeline-date {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  font-variant: small-caps;
+  letter-spacing: 0.5px;
+  color: #B7410E;
+}
+.timeline-title {
+  display: block;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #36454F;
+}
+.timeline-text {
+  display: block;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #5F6368;
+}
+
+/* Gallery: --per-view photos visible at once; site.js moves the track */
+.gallery {
+  --per-view: 1;
+  margin: 0 12px 34px;
+}
+@media (min-width: 600px) {
+  .gallery {
+    --per-view: 2;
+  }
+}
+@media (min-width: 992px) {
+  .gallery {
+    --per-view: 3;
+  }
+}
+.gallery-viewport {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+.gallery--js .gallery-viewport {
+  overflow: hidden;
+}
+.gallery-track {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transition: transform 0.6s ease;
+}
+.gallery-slide {
+  flex: 0 0 calc(100% / var(--per-view));
+  padding: 0 8px;
+  scroll-snap-align: start;
+}
+.gallery-slide figure {
+  margin: 0;
+}
+.gallery-open {
+  display: block;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+  cursor: zoom-in;
+  background: none;
+  border: 0;
+  border-radius: 6px;
+}
+.gallery-open img,
+.gallery-placeholder {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.gallery-open img {
+  transition: transform 0.4s ease;
+}
+.gallery-open:hover img {
+  transform: scale(1.03);
+}
+.gallery-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  color: #2A6049;
+  background: #EAF1ED;
+  border: 1px dashed #9bb8aa;
+}
+.gallery-placeholder .icon {
+  font-size: 2rem;
+}
+.gallery-slide figcaption {
+  margin-top: 8px;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #5F6368;
+}
+.gallery-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 16px;
+}
+.gallery-controls[hidden] {
+  display: none;
+}
+.gallery-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  font-size: 0.875rem;
+  color: #2A6049;
+  background: #EAF1ED;
+  border: 1px solid #2A6049;
+  border-radius: 50%;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.gallery-btn:hover,
+.gallery-btn:focus-visible {
+  color: #ffffff;
+  background: #2A6049;
+}
+.gallery-toggle .icon-play,
+.gallery-toggle.is-paused .icon-pause {
+  display: none;
+}
+.gallery-toggle.is-paused .icon-play {
   display: inline-block;
+}
+/* Enlarged photo */
+.lightbox {
+  max-width: min(92vw, 1100px);
+  padding: 0;
+  overflow: visible;
+  background: #111111;
+  border: 0;
+  border-radius: 8px;
+}
+.lightbox::backdrop {
+  background: rgba(0, 0, 0, 0.8);
+}
+.lightbox figure {
+  margin: 0;
+}
+.lightbox img {
+  display: block;
+  max-width: 100%;
+  max-height: 80vh;
+  margin: 0 auto;
+  border-radius: 8px 8px 0 0;
+}
+.lightbox figcaption {
+  padding: 10px 16px;
+  font-size: 0.875rem;
+  color: #eeeeee;
+}
+.lightbox-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.6);
+  border: 0;
+  border-radius: 50%;
+}
+/* Vignette cards, the example story, and the pebble game */
+.card-lang,
+.pebble-game {
+  margin-bottom: 30px;
+  padding: 0 20px;
+}
+.card-intro {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 20px;
+  margin-bottom: 18px;
+}
+.card-intro p {
+  margin: 0;
+  font-size: 0.875rem;
+}
+.lang-toggle {
+  display: inline-flex;
+  overflow: hidden;
+  border: 1px solid #2A6049;
+  border-radius: 999px;
+}
+.lang-toggle[hidden] {
+  display: none;
+}
+.lang-toggle button {
+  padding: 4px 16px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #2A6049;
+  background: #ffffff;
+  border: 0;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.lang-toggle button[aria-pressed="true"] {
+  color: #ffffff;
+  background: #2A6049;
+}
+.card-lang[data-lang="en"] .lang-km,
+.card-lang[data-lang="km"] .lang-en {
+  display: none;
+}
+.card-group {
+  margin-bottom: 24px;
+}
+.card-group-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #333333;
+}
+.card-group-note {
+  margin: 2px 0 10px;
+  font-size: 0.8125rem;
+  color: #5F6368;
+}
+.card-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+@media (min-width: 768px) {
+  .card-row {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .card-row--bags {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.card-row li {
+  min-width: 0;
+}
+.card-open {
+  display: block;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+  cursor: zoom-in;
+  background: none;
+  border: 0;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.14);
+  transition: translate 0.25s ease, box-shadow 0.25s ease;
+}
+.card-open:hover {
+  translate: 0 -3px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
+}
+.card-open img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.card-open--wide {
+  margin: 4px 0 8px;
+}
+.card-caption {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: #5F6368;
+}
+.fieldwork-card .card-note {
+  font-size: 0.8125rem;
+  color: #5F6368;
+}
+.pebble-game {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media (min-width: 768px) {
+  .pebble-game {
+    grid-template-columns: 2fr 3fr;
+    align-items: start;
+  }
+}
+.pebble-text p {
+  margin: 0 0 14px;
+  font-size: 0.875rem;
+}
+@media (max-width: 767px) {
+  .card-row--bags {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* The research question that opens the page */
+.fieldwork-intro .fieldwork-question {
+  margin: 2px 0 14px;
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #B7410E;
+}
+/* Key finding and the closing call to action */
+.fieldwork-finding {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 20px;
+  margin: 0 20px 34px;
+  padding: 16px 20px;
+  background: #F4F8F6;
+  border-left: 5px solid #B7410E;
+  border-radius: 6px;
+}
+.finding-label {
+  flex-basis: 100%;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  font-variant: small-caps;
+  letter-spacing: 1px;
+  color: #B7410E;
+}
+.fieldwork-finding p {
+  flex: 1 1 320px;
+  margin: 0;
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  color: #333333;
+}
+.fieldwork-cta {
+  margin: 0 20px 34px;
+  padding: 20px;
+  text-align: center;
+  background: #F4F8F6;
+  border-radius: 6px;
+}
+.fieldwork-cta p {
+  margin: 0 0 12px;
+  font-size: 1.0625rem;
+  color: #333333;
+}
+.fieldwork-cta .paper-actions {
+  justify-content: center;
+}
+/* Study design text with the example story */
+.fieldwork-design {
+  margin-bottom: 30px;
+  padding: 0 20px;
+}
+.fieldwork-design p {
+  margin: 0 0 14px;
+  font-size: 0.9375rem;
+}
+.fieldwork-design .card-open--wide {
+  max-width: 900px;
+}
+/* Timeline inside the Where & When card */
+.timeline--vertical {
+  margin: 0;
+  padding: 0;
+}
+/* Pebble game: the language switch sits above the box cards */
+.card-lang .pebble-game {
+  margin-bottom: 0;
+  padding: 0;
+}
+.pebble-cards .lang-toggle {
+  margin-bottom: 12px;
+}
+
+@media (max-width: 767px) {
+  .fieldwork-intro .fieldwork-question {
+    font-size: 1.25rem;
+  }
+  .fieldwork-finding,
+  .fieldwork-cta {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .stat-strip,
+  .fieldwork-grid,
+  .fieldwork-intro,
+  .timeline,
+  .card-lang,
+  .pebble-game,
+  .fieldwork-design {
+    padding: 0;
+  }
+  .gallery {
+    margin: 0 -8px 30px;
+  }
 }

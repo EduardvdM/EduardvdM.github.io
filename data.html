@@ -1,211 +1,180 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
-	<meta name="author"      content="Eduard van der Merwe">
-	
-	<title>Data &amp; Resources | Eduard van der Merwe</title>
-	<meta name="description" content="Data sources and resources used in Eduard van der Merwe's research on African development economics, poverty, culture, and religion.">
-	<meta property="og:title" content="Data &amp; Resources | Eduard van der Merwe">
-	<meta property="og:description" content="Data sources and resources used in Eduard van der Merwe's research on African development economics, poverty, culture, and religion.">
-	<meta property="og:type" content="website">
-	<meta property="og:url" content="https://eduardvandermerwe.com/data.html">
-	<meta property="og:site_name" content="Eduard van der Merwe">
-	<meta property="og:image" content="https://eduardvandermerwe.com/assets/images/headshot_EvdM.jpg">
-	<meta name="twitter:card" content="summary">
-	<meta name="twitter:title" content="Data &amp; Resources | Eduard van der Merwe">
-	<meta name="twitter:description" content="Data sources and resources used in Eduard van der Merwe's research on African development economics, poverty, culture, and religion.">
+---
+layout: default
+title: "Data & Resources"
+permalink: /data
+description: "Data from Eduard van der Merwe's research, an Introduction to R video series, and recommended sources on poverty, religion, culture, and conflict in Africa."
+---
+<div class="container">
+	<div class="row section featured topspace bottomspace page-pad">
 
-	<link rel="canonical" href="https://eduardvandermerwe.com/data.html">
+		<!-- Jump links to each section -->
+		<nav class="page-jump" aria-label="On this page">
+			<a href="#my-research-data">Data from My Research</a>
+			<a href="#tutorials">Tutorials</a>
+			<a href="#data-sources">Data Sources</a>
+			<a href="#reading-and-communities">Reading &amp; Communities</a>
+		</nav>
 
-	<!-- Icons -->
-	<link rel="icon" href="favicon.ico" sizes="48x48">
-	<link rel="icon" type="image/png" sizes="192x192" href="assets/images/icons/favicon-192.png">
-	<link rel="apple-touch-icon" href="assets/images/icons/apple-touch-icon.png">
-
-	<!-- Bootstrap -->
-	<link href="assets/css/bootstrap.css" rel="stylesheet">
-	<!-- Icons -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/academicons.css">
-	<!-- Custom styles -->
-	<link rel="stylesheet" href="assets/css/styles.css">
-
-</head>
-
-<body>
-
-<!-- 2. HEADER -->
-<header id="header">
-
-    <!-- IMAGE AND TITLE -->
-	<div id="head" class="parallax">
-		<h1 id="logo" class="text-center">
-			<span class="title"><a href="index.html">Eduard van der Merwe</a></span>
-			<span class="tagline">PhD Candidate in Economics<br>
-            Rice University</span>
-		</h1>
-	</div>
-
-    <nav class="navbar navbar-default backscroll-true">
-		<div class="container-fluid">
-			
-			<div class="navbar-collapse">
-				<ul class="nav navbar-nav">
-					<li><a href="index.html">Home</a></li>
-                    <li><a href="research.html">Research</a></li>
-                    <li><a href="teaching.html">Experience</a></li>
-                    <li><a href="cv.html">CV</a></li>
-                    <li class="active"><a href="data.html">Data &amp; Resources</a></li>
+		<!-- Data from my research: ids match the Data buttons on the Research page -->
+		<h2 class="section-title" id="my-research-data">Data from My Research</h2>
+		<div class="data-grid">
+			<article class="data-card" id="preaching-against-the-choir">
+				<h3 class="data-card-title">Preaching Against the Choir: Religious Leaders and Reproductive Norms in Kenya</h3>
+				<p class="data-card-meta">Job Market Paper &middot; 2026</p>
+				<ul class="data-sources">
+					<li>Original survey of 635 women, 17 religious leaders, and 4 focus groups in Maua, Meru County, Kenya (2026)</li>
+					<li><a href="https://dhsprogram.com/Countries/Country-Main.cfm?ctry_id=20&amp;c=Kenya">Kenya Demographic and Health Survey</a>: 2003, 2008, 2014, and 2022 waves</li>
+					<li>Confidential program records from <a href="https://www.chak.or.ke">CHAK</a> and <a href="https://www.ccih.org">CCIH</a> identifying the 21 health facilities that were involved in faith-based family planning advocacy</li>
+					<li>Kenya Master Health Facility Register: all registered health facilities, with facility type and church affiliation</li>
+					<li><a href="https://www.afrobarometer.org/countries/kenya/">Afrobarometer</a>: Kenya, waves 2&ndash;8 (2003&ndash;2021)</li>
+					<li><a href="https://www.worldvaluessurvey.org/WVSDocumentationWV7.jsp">World Values Survey</a>: Kenya (2021)</li>
+					<li><a href="https://international.ipums.org/international/">IPUMS International</a>: 2019 Kenya Population and Housing Census</li>
+					<li>Spatial data: <a href="https://www.openstreetmap.org">OpenStreetMap</a> places of worship, <a href="https://geo.aiddata.org">AidData GeoQuery</a>, and <a href="https://www.geoboundaries.org">geoBoundaries</a> administrative boundaries</li>
 				</ul>
-			</div>
-		</div>	
-	</nav>
-
-</header> <!-- close header -->	
-
-<main id="main">
-
-	<div class="container">
-
-		<div class="row topspace" style="padding: 5px 20px;">
-			
-			<!-- Article main content -->
-			<article class="col-xs-12 col-md-8 maincontent">
-
-				<!-- Own Articles -->
-				<h5 class="section-title"><span>Data Used in My Research</span></h5>
-				<ul class="research-list">
-					<li>
-						<span class="paper-name">Climate Change and Child Malnutrition: A Nigerian Perspective</span>
-						<ul class="data-text">
-							<li>Climate Data: <a href="https://dx.doi.org/10.5285/10d3e3640f004c578403419aac167d82">CRU-TS-4.03.</a></li>
-							<li>Nigeria LSMS Data: <a href="https://doi.org/10.48529/y9e2-b753">Wave 1 (2010/2011)</a>,
-								<a href="https://doi.org/10.48529/kxpy-aa72">Wave 2 (2012/2013)</a>,
-								<a href="https://doi.org/10.48529/7xmj-q133">Wave 3 (2015/2016)</a>.
-							</li>
-						</ul>
-					</li>
-					<li>
-						<span class="paper-name">Government Religious Preference and Intrastate Conflict</span>
-						<ul class="data-text">
-							<li>Conflict Data: <a href="https://ucdp.uu.se/downloads/">UCDP Georeferenced Event Dataset Version 20.1.</a></li>
-							<li>Government Religious Preference: <a href="https://www.thearda.com/data-archive?fid=GRPCOMP">ARDA, GRP 2.0, Composite.</a></li>
-							<li>Other Data Sources: <a href="https://datatopics.worldbank.org/world-development-indicators/">World Bank WDI</a>,
-								<a href="https://www.systemicpeace.org/polity/polity4.htm">Polity IV Project.</a></li>
-						</ul>
-					</li>
-				</ul>
-
+				<div class="paper-actions">
+					<a class="paper-btn" href="/research#preaching-against-the-choir">Paper</a>
+					<a class="paper-btn" href="/fieldwork">Fieldwork</a>
+					<span class="paper-btn paper-btn--soon">Replication Package: Coming Soon</span>
+				</div>
 			</article>
-			<!-- /Article -->
-
-			<!-- Sidebar/Links to Data -->
-			<aside class="col-xs-12 col-md-4 sidebar sidebar-left">
-
-				<div class="widget">
-					<h5 class="section-title section-title--center"><span>Useful Data Sources</span></h5>
-					<ul>
-						<li><i class="fa-solid fa-database"></i> <a href="https://pip.worldbank.org/home">World Bank: PIP</a></li>
-						<li><i class="fa-solid fa-database"></i> <a href="https://www.worldbank.org/en/programs/lsms">World Bank: LSMS</a></li>
-						<li><i class="fa-solid fa-database"></i> <a href="https://datatopics.worldbank.org/world-development-indicators/">World Bank: WDI</a></li>
-						<li><i class="fa-solid fa-database"></i> <a href="https://www.afrobarometer.org">Afrobarometer</a></li>
-						<li><i class="fa-solid fa-database"></i> <a href="https://dhsprogram.com">DHS Program</a></li>
-						<li><i class="fa-solid fa-database"></i> <a href="https://www.worldvaluessurvey.org/wvs.jsp">World Values Survey</a></li>
-						<li><i class="fa-solid fa-database"></i> <a href="https://d-place.org/contributions/EA">Ethnographic Atlas</a></li>
-						<li><i class="fa-solid fa-file-lines"></i> <a href="https://doi.org/10.1080/20780389.2018.1435267">Ancestral Characteristics of Modern Populations (Giuliano & Nunn, 2018)</a></li>
-					</ul>
+			<article class="data-card" id="heritage-of-hunger">
+				<h3 class="data-card-title">Heritage of Hunger: Ethnicity, Resource Allocation, and Child Poverty</h3>
+				<p class="data-card-meta">Submitted to <em>Journal of Economic Behavior &amp; Organization</em> &middot; 2026</p>
+				<ul class="data-sources">
+					<li><a href="https://www.worldbank.org/en/programs/lsms">World Bank LSMS</a>: Ethiopia (2018/19), Ghana (2016/17), Malawi (2019/20), Nigeria (2018/19), Uganda (2019/20)</li>
+					<li><a href="https://d-place.org/contributions/EA">Ethnographic Atlas</a> (Murdock, 1967)</li>
+					<li><a href="https://doi.org/10.1080/20780389.2018.1435267">Ancestral Characteristics of Modern Populations</a> (Giuliano &amp; Nunn, 2018)</li>
+					<li><a href="https://www.geoboundaries.org">geoBoundaries</a> administrative boundaries</li>
+				</ul>
+				<div class="paper-actions">
+					<a class="paper-btn" href="/assets/Publications/HoH_Manuscript_EvdM.pdf">Paper</a>
+					<span class="paper-btn paper-btn--soon">Replication Package: Coming Soon</span>
 				</div>
-
-				<div class="widget">
-					<h5 class="section-title section-title--center"><span>Interested in Poverty & Development Economics</span></h5>
-					<ul>
-						<li><i class="fa-solid fa-book"></i> <a href="https://doi.org/10.1093/acprof:oso/9780190212766.001.0001">The Economics of Poverty: History, Measurement, and Policy (Ravallion, 2016)</a></li>
-						<li><i class="fa-solid fa-podcast"></i> <a href="https://voxdev.org">VoxDev Podcast</a></li>
-						<li><i class="fa-solid fa-book"></i> <a href="https://www.sciencedirect.com/handbook/handbook-of-development-economics">Handbook of Development Economics</a></li>
-						<li><i class="fa-solid fa-globe"></i> <a href="https://www.nber.org/programs-projects/programs-working-groups/development-economics?page=1&perPage=50">NBER Development Economics</a></li>
-						<li><i class="fa-solid fa-globe"></i> <a href="https://www.povertyactionlab.org">J-PAL</a></li>
-					</ul>
+			</article>
+			<article class="data-card" id="climate-change-and-child-malnutrition">
+				<h3 class="data-card-title">Climate Change and Child Malnutrition: A Nigerian Perspective</h3>
+				<p class="data-card-meta">Published &middot; <em>Food Policy</em> &middot; 2022</p>
+				<ul class="data-sources">
+					<li>Climate: <a href="https://doi.org/10.5285/10d3e3640f004c578403419aac167d82">CRU TS 4.03</a></li>
+					<li>Nigeria LSMS: <a href="https://doi.org/10.48529/y9e2-b753">Wave 1 (2010/11)</a>, <a href="https://doi.org/10.48529/kxpy-aa72">Wave 2 (2012/13)</a>, <a href="https://doi.org/10.48529/7xmj-q133">Wave 3 (2015/16)</a></li>
+				</ul>
+				<div class="paper-actions">
+					<a class="paper-btn" href="https://doi.org/10.1016/j.foodpol.2022.102281">Paper</a>
 				</div>
-
-				<div class="widget">
-					<h5 class="section-title section-title--center"><span>Interested in the Economics of Culture & Religion</span></h5>
-					<ul>
-						<li><i class="fa-solid fa-database"></i> <a href="https://www.thearda.com">ARDA</a></li>
-						<li><i class="fa-solid fa-database"></i> <a href="https://www.worldreligiondatabase.org">World Religion Database</a></li>
-						<li><i class="fa-solid fa-database"></i> <a href="https://ras.thearda.com">Religion and the State</a></li>
-						<li><i class="fa-solid fa-database"></i> <a href="https://seshatdatabank.info">Seshat: Global History Databank</a></li>
-						<li><i class="fa-solid fa-globe"></i> <a href="https://www.asrec.org">ASREC</a></li>
-						<li><i class="fa-solid fa-globe"></i> <a href="https://www.chapman.edu/research/institutes-and-centers/institute-religion-economics-society/index.aspx">IRES</a></li>
-						<li><i class="fa-solid fa-file-lines"></i> <a href="http://dx.doi.org/10.1257/jel.54.2.395">The New Economics of Religion (Iyer, 2016)</a></li>
-					</ul>
+			</article>
+			<article class="data-card" id="government-religious-preference">
+				<h3 class="data-card-title">Government Religious Preference and Intrastate Conflict</h3>
+				<p class="data-card-meta">Working Paper &middot; <em>Economic Research Southern Africa</em> &middot; 2021</p>
+				<ul class="data-sources">
+					<li>Conflict: <a href="https://ucdp.uu.se/downloads/">UCDP Georeferenced Event Dataset 20.1</a></li>
+					<li>Government religious preference: <a href="https://www.thearda.com/data-archive?fid=GRPCOMP">ARDA, GRP 2.0 Composite</a></li>
+					<li>Other: <a href="https://datatopics.worldbank.org/world-development-indicators/">World Bank WDI</a>, <a href="https://www.systemicpeace.org/polity/polity4.htm">Polity IV Project</a></li>
+				</ul>
+				<div class="paper-actions">
+					<a class="paper-btn" href="https://doi.org/10.71587/6da1ep32">Paper</a>
 				</div>
-				
-			</aside> <!-- Close Sidebar -->
-			
+			</article>
 		</div>
 
-		<div class="row">
-			<blockquote style="font-size: 10px; text-align: justify;">
-				Most datasets are not my property and I do not endorse any sources.
-				I provide resources that I have found helpful or interesting.
-				I would appreciate <a href="mailto:e.vdmerwe@rice.edu">hearing about</a> any valuable resources or databases you know of that I might not have discovered yet.
-				When using any of the data sets linked from this website, please use the correct citations and give credit to the rightful owners. 
-				Please <a href="mailto:e.vdmerwe@rice.edu">contact me</a> if any of the links have expired or do not work.
-				Datasets composed by me or my co-authors and available here require the citation of the relevant article and data sources.
-			</blockquote>
+		<!-- Tutorials -->
+		<div class="section-head">
+			<h2 class="section-title" id="tutorials">Tutorials</h2>
+			<a class="to-top" href="#header" aria-label="Back to top"><span aria-hidden="true">&uarr;</span></a>
+		</div>
+		<div class="data-grid">
+			<article class="data-card data-card--wide">
+				<h3 class="data-card-title">Introduction to R</h3>
+				<p class="data-card-meta">Video Series</p>
+				<p class="data-card-text">A step-by-step video series for incoming students and researchers, created while I was a research assistant at the University of Pretoria.</p>
+				<div class="paper-actions">
+					<a class="paper-btn" href="https://drive.google.com/drive/folders/1eiTd0ZcpTPae0Z89AFLKPtMIhTnciUM3?usp=drive_link">Watch the Series</a>
+				</div>
+			</article>
 		</div>
 
-	</div>	<!-- /container -->
-	
-</main>
+		<!-- Recommended data sources, grouped like the homepage research themes -->
+		<div class="section-head">
+			<h2 class="section-title" id="data-sources">Recommended Data Sources</h2>
+			<a class="to-top" href="#header" aria-label="Back to top"><span aria-hidden="true">&uarr;</span></a>
+		</div>
+		<div class="resource-grid">
+			<section class="resource-card" aria-labelledby="res-religion">
+				<h3 class="resource-card-title" id="res-religion"><span class="theme-icon">{% include icon.html name="hands-praying" %}</span> Religion, Culture &amp; Norms</h3>
+				<ul class="resource-list">
+					<li>{% include icon.html name="database" class="resource-icon" %}<div><a href="https://www.thearda.com">ARDA</a><span class="resource-desc">Free archive of survey and cross-national data on religion</span></div></li>
+					<li>{% include icon.html name="database" class="resource-icon" %}<div><a href="https://www.worldreligiondatabase.org">World Religion Database</a><span class="resource-desc">Religious demographics for every country (subscription)</span></div></li>
+					<li>{% include icon.html name="database" class="resource-icon" %}<div><a href="https://ras.thearda.com">Religion and the State</a><span class="resource-desc">Government involvement in religion across countries since 1990</span></div></li>
+					<li>{% include icon.html name="database" class="resource-icon" %}<div><a href="https://d-place.org/contributions/EA">Ethnographic Atlas</a><span class="resource-desc">Pre-industrial cultural practices of about 1,300 societies</span></div></li>
+					<li>{% include icon.html name="file-lines" class="resource-icon" %}<div><a href="https://doi.org/10.1080/20780389.2018.1435267">Ancestral Characteristics of Modern Populations</a><span class="resource-desc">Links Ethnographic Atlas traits to today's populations (Giuliano &amp; Nunn, 2018)</span></div></li>
+					<li>{% include icon.html name="database" class="resource-icon" %}<div><a href="https://seshatdatabank.info">Seshat: Global History Databank</a><span class="resource-desc">Coded data on the social complexity and religion of past societies</span></div></li>
+					<li>{% include icon.html name="database" class="resource-icon" %}<div><a href="https://www.worldvaluessurvey.org/wvs.jsp">World Values Survey</a><span class="resource-desc">Values and beliefs across more than 100 countries since 1981</span></div></li>
+					<li>{% include icon.html name="database" class="resource-icon" %}<div><a href="https://www.afrobarometer.org">Afrobarometer</a><span class="resource-desc">Public attitude surveys across more than 30 African countries</span></div></li>
+				</ul>
+			</section>
+			<section class="resource-card" aria-labelledby="res-poverty">
+				<h3 class="resource-card-title" id="res-poverty"><span class="theme-icon">{% include icon.html name="scale-unbalanced" %}</span> Poverty &amp; Inequality</h3>
+				<ul class="resource-list">
+					<li>{% include icon.html name="database" class="resource-icon" %}<div><a href="https://pip.worldbank.org/home">World Bank PIP</a><span class="resource-desc">Global poverty and inequality estimates</span></div></li>
+					<li>{% include icon.html name="database" class="resource-icon" %}<div><a href="https://www.worldbank.org/en/programs/lsms">World Bank LSMS</a><span class="resource-desc">Household surveys on consumption, agriculture, and health</span></div></li>
+					<li>{% include icon.html name="database" class="resource-icon" %}<div><a href="https://dhsprogram.com">DHS Program</a><span class="resource-desc">Health, nutrition, and fertility surveys in more than 90 countries</span></div></li>
+					<li>{% include icon.html name="database" class="resource-icon" %}<div><a href="https://datatopics.worldbank.org/world-development-indicators/">World Development Indicators</a><span class="resource-desc">Development indicators for more than 200 economies</span></div></li>
+					<li>{% include icon.html name="database" class="resource-icon" %}<div><a href="https://international.ipums.org">IPUMS International</a><span class="resource-desc">Harmonized census microdata from more than 100 countries</span></div></li>
+				</ul>
+			</section>
+			<section class="resource-card" aria-labelledby="res-climate">
+				<h3 class="resource-card-title" id="res-climate"><span class="theme-icon">{% include icon.html name="cloud-sun-rain" %}</span> Climate &amp; Conflict</h3>
+				<ul class="resource-list">
+					<li>{% include icon.html name="database" class="resource-icon" %}<div><a href="https://ucdp.uu.se/downloads/">UCDP</a><span class="resource-desc">Georeferenced data on organized violence since 1989</span></div></li>
+					<li>{% include icon.html name="database" class="resource-icon" %}<div><a href="https://acleddata.com">ACLED</a><span class="resource-desc">Event data on political violence and protest</span></div></li>
+					<li>{% include icon.html name="database" class="resource-icon" %}<div><a href="https://crudata.uea.ac.uk/cru/data/hrg/">CRU TS</a><span class="resource-desc">Monthly gridded temperature and precipitation since 1901</span></div></li>
+					<li>{% include icon.html name="database" class="resource-icon" %}<div><a href="https://www.chc.ucsb.edu/data/chirps">CHIRPS</a><span class="resource-desc">High-resolution rainfall estimates since 1981</span></div></li>
+					<li>{% include icon.html name="database" class="resource-icon" %}<div><a href="https://www.systemicpeace.org/inscrdata.html">Polity5</a><span class="resource-desc">Regime authority scores for countries since 1800</span></div></li>
+				</ul>
+			</section>
+			<section class="resource-card" aria-labelledby="res-maps">
+				<h3 class="resource-card-title" id="res-maps"><span class="theme-icon">{% include icon.html name="map-location-dot" %}</span> Maps &amp; Spatial Data</h3>
+				<ul class="resource-list">
+					<li>{% include icon.html name="database" class="resource-icon" %}<div><a href="https://www.geoboundaries.org">geoBoundaries</a><span class="resource-desc">Open administrative boundaries for every country</span></div></li>
+					<li>{% include icon.html name="database" class="resource-icon" %}<div><a href="https://gadm.org">GADM</a><span class="resource-desc">Administrative areas at several levels for all countries</span></div></li>
+					<li>{% include icon.html name="database" class="resource-icon" %}<div><a href="https://spatialdata.dhsprogram.com">DHS Spatial Data</a><span class="resource-desc">Subnational boundaries and mapped DHS indicators</span></div></li>
+					<li>{% include icon.html name="database" class="resource-icon" %}<div><a href="https://www.aiddata.org/datasets">AidData</a><span class="resource-desc">Geocoded aid and development finance projects, with GeoQuery for extracting data by administrative area</span></div></li>
+				</ul>
+			</section>
+		</div>
 
-<!-- 4. FOOTER -->
-<footer id="footer">
-	<div class="container">
-		<div class="row">
+		<!-- Reading & communities, split by field -->
+		<div class="section-head">
+			<h2 class="section-title" id="reading-and-communities">Reading &amp; Communities</h2>
+			<a class="to-top" href="#header" aria-label="Back to top"><span aria-hidden="true">&uarr;</span></a>
+		</div>
+		<div class="resource-grid">
+			<section class="resource-card" aria-labelledby="res-development">
+				<h3 class="resource-card-title" id="res-development"><span class="theme-icon">{% include icon.html name="earth-africa" %}</span> Development Economics</h3>
+				<ul class="resource-list">
+					<li>{% include icon.html name="globe" class="resource-icon" %}<div><a href="https://idea.devecon.org">IDEA</a><span class="resource-desc">International Development Economics Association</span></div></li>
+					<li>{% include icon.html name="book" class="resource-icon" %}<div><a href="https://doi.org/10.1093/acprof:oso/9780190212766.001.0001">The Economics of Poverty</a><span class="resource-desc">History, measurement, and policy (Ravallion, 2016)</span></div></li>
+					<li>{% include icon.html name="book" class="resource-icon" %}<div><a href="https://www.sciencedirect.com/handbook/handbook-of-development-economics">Handbook of Development Economics</a><span class="resource-desc">Surveys of the field by leading researchers</span></div></li>
+					<li>{% include icon.html name="podcast" class="resource-icon" %}<div><a href="https://voxdev.org">VoxDev</a><span class="resource-desc">Research summaries and podcasts on development economics</span></div></li>
+					<li>{% include icon.html name="globe" class="resource-icon" %}<div><a href="https://www.nber.org/programs-projects/programs-working-groups/development-economics?page=1&amp;perPage=50">NBER Development Economics</a><span class="resource-desc">Working papers from the NBER development program</span></div></li>
+					<li>{% include icon.html name="globe" class="resource-icon" %}<div><a href="https://www.povertyactionlab.org">J-PAL</a><span class="resource-desc">Randomized evaluations of anti-poverty programs</span></div></li>
+				</ul>
+			</section>
+			<section class="resource-card" aria-labelledby="res-religion-culture">
+				<h3 class="resource-card-title" id="res-religion-culture"><span class="theme-icon">{% include icon.html name="book-open" %}</span> Economics of Religion &amp; Culture</h3>
+				<ul class="resource-list">
+					<li>{% include icon.html name="file-lines" class="resource-icon" %}<div><a href="https://www.jstor.org/stable/2564806">Introduction to the Economics of Religion</a><span class="resource-desc">The survey that launched the modern field (Iannaccone, 1998)</span></div></li>
+					<li>{% include icon.html name="file-lines" class="resource-icon" %}<div><a href="https://doi.org/10.1257/jel.54.2.395">The New Economics of Religion</a><span class="resource-desc">Review of the economics of religion (Iyer, 2016)</span></div></li>
+					<li>{% include icon.html name="file-lines" class="resource-icon" %}<div><a href="https://doi.org/10.1257/jel.53.4.898">Culture and Institutions</a><span class="resource-desc">An entry point to culture and institutions (Alesina &amp; Giuliano, 2015)</span></div></li>
+					<li>{% include icon.html name="globe" class="resource-icon" %}<div><a href="https://www.asrec.org">ASREC</a><span class="resource-desc">Association for the Study of Religion, Economics &amp; Culture</span></div></li>
+					<li>{% include icon.html name="globe" class="resource-icon" %}<div><a href="https://www.chapman.edu/research/institutes-and-centers/institute-religion-economics-society/index.aspx">IRES</a><span class="resource-desc">Institute for the Study of Religion, Economics &amp; Society (Chapman University)</span></div></li>
+				</ul>
+			</section>
+		</div>
 
-			<!-- CONTACT INFORMATION -->
-			<div class="col-xs-12 col-sm-4 widget">
-				<h3 class="widget-title">Contact</h3>
-				<div class="widget-body">
-					<p class="text-left">
-						<a href="mailto:e.vdmerwe@rice.edu">e.vdmerwe@rice.edu</a><br>
-						<a href="https://economics.rice.edu">Rice University, Houston, TX, USA</a>
-					</p>
-				</div>
-			</div>
+		<p class="disclaimer">
+			The datasets listed here belong to their creators, so please cite the original sources. When data from my own projects become available, please also cite the relevant paper.
+			If a link no longer works, or you know a resource that belongs here, I would be glad to <a href="mailto:e.vdmerwe@rice.edu">hear from you</a>.
+		</p>
 
-			<!-- SOCIAL MEDIA LINKS -->
-			<div class="col-xs-12 col-sm-4 widget">
-				<h3 class="widget-title">Connect With Me</h3>
-				<div class="widget-body">
-					<p class="follow-me-icons text-left">
-						<a href="https://x.com/EduardvdM7" aria-label="Twitter / X profile"><i class="fa-brands fa-x-twitter"></i></a>
-						<a href="https://scholar.google.com/citations?user=xDPxZXcAAAAJ&hl=en" aria-label="Google Scholar profile"><i class="ai ai-google-scholar"></i></a>
-						<a href="https://www.linkedin.com/in/eduard-vdm/" aria-label="LinkedIn profile"><i class="fa-brands fa-linkedin"></i></a>
-						<a href="https://orcid.org/0000-0002-6055-3382" aria-label="ORCID profile"><i class="ai ai-orcid"></i></a>
-					</p>
-				</div>
-			</div>
-
-			<!-- COPYRIGHT -->
-			<div class="col-xs-12 col-sm-4 widget footer-copyright">
-				<div class="widget-body">
-					<p>Copyright &copy; 2026, Eduard van der Merwe</p>
-				</div>
-			</div>
-
-		</div> <!-- close row -->
-	</div> <!-- close container -->
-</footer> <!-- close footer -->
-
-<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
-<script src="assets/js/query.js"></script>
-<script src="assets/js/bootstrap.js"></script>
-<script src="assets/js/backscroll.js"></script>
-<script src="assets/js/links.js"></script>
-</body>
-</html>
-
+	</div>
+</div>

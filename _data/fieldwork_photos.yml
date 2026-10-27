@@ -1,0 +1,78 @@
+# Fieldwork gallery on /fieldwork, shown in this order.
+#
+# Adding photos:
+# 1. Put the original photos in _fieldwork-originals/ (that folder is never published or committed).
+# 2. They get resized, stripped of all metadata (including GPS), and saved in assets/images/fieldwork/ as
+#    fieldwork-NN.jpg (enlarged view) plus fieldwork-NN-small.jpg (gallery row).
+# 3. Write a one-line caption and a short description (alt) of what the photo shows for screen reader users.
+# Until a photo file exists, its slot shows a "Photo coming soon" tile.
+#
+# Everyone photographed consented (communities, children, enumerators, and survey respondents signed waivers).
+# Photos showing children's faces are left out on purpose (13 SurveyResponse3 and 16 ConsentedSelfie were removed in October 2026).
+
+- file: fieldwork-01.jpg          # MeruLandscape2
+  caption: "The hills near Maua"
+  alt: "Wooded green hills and valleys stretching to distant mountains under a blue sky"
+- file: fieldwork-02.jpg          # MeruLandscape7
+  caption: "Looking across the valleys of Meru"
+  alt: "Tall trees on a ridge above a wide valley with hills in the distance under a cloudy sky"
+- file: fieldwork-03.jpg          # SurveyMaterials
+  caption: "Survey materials ready for the field"
+  alt: "A table laid out with printed survey booklets, cards, and striped bags for the pebble voting game"
+- file: fieldwork-04.jpg          # EnumeratorTraining1
+  caption: "Enumerator training"
+  alt: "Enumerators seated at long tables with survey papers and tablets in a training room"
+- file: fieldwork-05.jpg          # EnumeratorTraining5
+  caption: "Enumerators practising with the survey materials"
+  alt: "A full training room of enumerators working through survey cards at tables"
+- file: fieldwork-06.jpg          # FGMMessage
+  caption: "A message against FGM painted on a wall in Maua"
+  alt: "A pink wall painted with the words Say No to FGM and a message about ending female genital mutilation"
+- file: fieldwork-07.jpg          # SodzoTeam1
+  caption: "The Sodzo Kenya team"
+  alt: "Six members of the Sodzo Kenya team standing together outdoors"
+- file: fieldwork-08.jpg          # FocusGroupCommunity
+  caption: "Community members gathered for a focus group"
+  alt: "A long row of women seated along a path under trees on a sunny day"
+- file: fieldwork-09.jpg          # FocusGroupDiscussion1
+  caption: "A focus group discussion"
+  alt: "Women seated on the grass in a circle while a facilitator stands and speaks"
+- file: fieldwork-10.jpg          # Community2
+  caption: "Community members gathering during the main survey"
+  alt: "A large group of people gathered at the edge of an open field near houses and banana trees"
+- file: fieldwork-11.jpg          # SurveyResponse1
+  caption: "An interview during the main survey"
+  alt: "An enumerator and a respondent sitting on the grass with survey papers"
+- file: fieldwork-12.jpg          # SurveyResponse2
+  caption: "Interviews under way on a hillside"
+  alt: "Small groups sitting apart on a grassy slope below tall trees"
+- file: fieldwork-14.jpg          # SurveyResponse4
+  caption: "An interview in the shade"
+  alt: "Two women seen from behind, sitting on the ground beneath a tree"
+- file: fieldwork-15.jpg          # TableBankingGroup
+  caption: "A table banking group meeting"
+  alt: "A group of women seated in a circle on a grassy field"
+- file: fieldwork-17.jpg          # Church1
+  caption: "A church near Maua"
+  alt: "A small church building with a blue roof and a pink door, surrounded by trees"
+- file: fieldwork-18.jpg          # Pharmacy1
+  caption: "A pharmacy near Maua"
+  alt: "A single-storey pharmacy building with a covered porch and trees behind it"
+- file: fieldwork-19.jpg          # MeruLandscape4
+  caption: "Farmland and trees on the hillside"
+  alt: "Young trees and shrubs on a hillside with a blue tin roof in the corner"
+- file: fieldwork-20.jpg          # MeruLandscape1
+  caption: "Tall trees above the valley"
+  alt: "Slender trees framing a view over a green valley under a clear blue sky"
+- file: fieldwork-21.jpg          # MeruLandscape3
+  caption: "Looking out over the plains"
+  alt: "A wide view over flat plains with a lone hill on the horizon and bushes in the foreground"
+- file: fieldwork-22.jpg          # MeruLandscape6
+  caption: "Red soil and distant hills"
+  alt: "Bare red earth in the foreground with rocky hills on the horizon"
+- file: fieldwork-23.jpg          # MeruLandscape5
+  caption: "Sunrise over the plains"
+  alt: "An orange sunrise behind acacia trees across a flat, open landscape"
+- file: fieldwork-24.jpg          # SodzoTeam2
+  caption: "With the Sodzo Kenya field team"
+  alt: "Eduard van der Merwe standing with six members of the field team in front of a hedge"

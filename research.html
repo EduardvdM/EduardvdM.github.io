@@ -1,189 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
-	<meta name="author"      content="Eduard van der Merwe">
+---
+layout: default
+title: Research
+permalink: /research
+description: "Research by Eduard van der Merwe: his job market paper on religious leaders and reproductive norms in Kenya, and work on child poverty and conflict in Africa."
+---
+<div class="container">
+	<div class="row section featured topspace bottomspace page-pad">
 
-	<title>Research | Eduard van der Merwe</title>
-	<meta name="description" content="Research by Eduard van der Merwe on development economics, child poverty, ethnicity, culture, religion, and conflict in Africa.">
-	<meta property="og:title" content="Research | Eduard van der Merwe">
-	<meta property="og:description" content="Research by Eduard van der Merwe on development economics, child poverty, ethnicity, culture, religion, and conflict in Africa.">
-	<meta property="og:type" content="website">
-	<meta property="og:url" content="https://eduardvandermerwe.com/research.html">
-	<meta property="og:site_name" content="Eduard van der Merwe">
-	<meta property="og:image" content="https://eduardvandermerwe.com/assets/images/headshot_EvdM.jpg">
-	<meta name="twitter:card" content="summary">
-	<meta name="twitter:title" content="Research | Eduard van der Merwe">
-	<meta name="twitter:description" content="Research by Eduard van der Merwe on development economics, child poverty, ethnicity, culture, religion, and conflict in Africa.">
-
-	<link rel="canonical" href="https://eduardvandermerwe.com/research.html">
-
-	<!-- Icons -->
-	<link rel="icon" href="favicon.ico" sizes="48x48">
-	<link rel="icon" type="image/png" sizes="192x192" href="assets/images/icons/favicon-192.png">
-	<link rel="apple-touch-icon" href="assets/images/icons/apple-touch-icon.png">
-
-	<!-- Bootstrap -->
-	<link href="assets/css/bootstrap.css" rel="stylesheet">
-	<!-- Icons -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/academicons.css">
-	<!-- Custom styles -->
-	<link rel="stylesheet" href="assets/css/styles.css">
-
-</head>
-
-<body>
-
-<!-- 2. HEADER -->
-<header id="header">
-
-    <!-- IMAGE AND TITLE -->
-	<div id="head" class="parallax">
-		<h1 id="logo" class="text-center">
-			<span class="title"><a href="index.html">Eduard van der Merwe</a></span>
-			<span class="tagline">PhD Candidate in Economics<br>
-            Rice University</span>
-		</h1>
-	</div>
-
-    <!-- NAVIGATION BAR -->
-    <nav class="navbar navbar-default backscroll-true">
-		<div class="container-fluid">
-
-			<div class="navbar-collapse">
-				<ul class="nav navbar-nav">
-					<li><a href="index.html">Home</a></li>
-                    <li class="active"><a href="research.html">Research</a></li>
-                    <li><a href="teaching.html">Experience</a></li>
-                    <li><a href="cv.html">CV</a></li>
-                    <li><a href="data.html">Data &amp; Resources</a></li>
+		<!-- Working Papers -->
+		<!-- Each paper has an id so other pages (e.g. the Data page) can link straight to it -->
+		<h2 class="section-title">Working Papers</h2>
+		<div class="row">
+			<div class="col-xs-12 col-md-12">
+				<ul class="research-list">
+					<li id="preaching-against-the-choir">
+						<!-- Title, PDF and abstract come from _data/job_market.yml, shared with the homepage -->
+						{%- assign jmp = site.data.job_market.paper %}
+						<span class="paper-name"><a href="{{ jmp.pdf }}">{{ jmp.title }}</a></span>
+						<span class="paper-status-tag">Job Market Paper &middot; 2026</span>
+						<div class="paper-fieldwork">{% include icon.html name="location-dot" %} <a href="/fieldwork">Fieldwork: Maua, Meru County, Kenya</a></div>
+						<div class="paper-actions">
+							<details class="abstract-toggle" open>
+								<summary>Abstract</summary>
+								<p class="abstract-text">
+									<em>{{ jmp.abstract }}</em>
+								</p>
+							</details>
+							<a class="paper-btn" href="{{ jmp.pdf }}">PDF</a>
+							{%- if jmp.appendix %}
+							<a class="paper-btn" href="{{ jmp.appendix }}">Appendix</a>
+							{%- endif %}
+							<a class="paper-btn" href="/data#preaching-against-the-choir">Data</a>
+						</div>
+					</li>
+					<li id="heritage-of-hunger">
+						<span class="paper-name"><a href="/assets/Publications/HoH_Manuscript_EvdM.pdf">Heritage of Hunger: Ethnicity, Resource Allocation, and Child Poverty</a></span>
+						<span class="paper-status-tag">Submitted to <em>Journal of Economic Behavior &amp; Organization</em> &middot; 2026</span>
+						<div class="paper-actions">
+							<details class="abstract-toggle">
+								<summary>Abstract</summary>
+								<p class="abstract-text">
+									<em>Researchers and policymakers increasingly recognize that cultural and traditional practices matter for economic development outcomes.
+									In this paper, I examine the relationships among ancestral ethnic characteristics, household resource sharing, child poverty, and child nutrition
+									outcomes in Ethiopia, Ghana, Malawi, Nigeria, and Uganda. Using a collective household model to estimate the fraction of household resources
+									children receive, I show that child welfare outcomes differ across ethnic groups within every country. To identify the ethnic traits that are
+									most associated with these differences, I apply random forest regressions to screen the Ethnographic Atlas. I find that children in societies
+									with ancestral independent-family or clan-barrio structures receive a larger share of household resources. Children in societies with historically
+									low dependence on agriculture or with early-age male circumcision rituals receive a smaller share. Several traits also correlate with household
+									composition, potentially reversing the association between resource shares and child poverty. I also show that differences in resource allocation
+									do not primarily drive the nutritional gaps between trait groups, and that ancestral practices and location are partially entangled. These
+									descriptive results suggest that policies aimed at alleviating child poverty and undernutrition should account for how cultural context shapes
+									both household formation and within-household resource sharing.</em>
+								</p>
+							</details>
+							<a class="paper-btn" href="/assets/Publications/HoH_Manuscript_EvdM.pdf">PDF</a>
+							<a class="paper-btn" href="/assets/Publications/HoH_Appendix_EvdM.pdf">Appendix</a>
+							<a class="paper-btn" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5327380">SSRN</a>
+							<a class="paper-btn" href="/data#heritage-of-hunger">Data</a>
+						</div>
+					</li>
 				</ul>
 			</div>
 		</div>
-	</nav>
 
-</header> <!-- close header -->
-
-<!-- 3. RESEARCH PAGE -->
-<main id="main">
-
-	<div class="container">
-		<div class="row section featured topspace bottomspace" style="padding: 5px 20px;">
-
-			<!-- Working Papers -->
-			<h5 class="section-title"><span>Working Papers</span></h5>
-			<div class="row">
-				<div class="col-xs-12 col-md-12">
-					<ul class="research-list">
-						<li>
-							<span class="paper-name"><a href="assets/Publications/Heritage_of_Hunger.pdf">Heritage of Hunger: Ethnicity, Resource Allocation and Child Poverty</a></span>
-							<span class="paper-status-tag">Revise &amp; Resubmit</span>
-							<div class="paper-names">Eduard van der Merwe | March 2026</div>
-							<div class="paper-meta">
-								<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5327380">SSRN</a> &middot;
-								<a href="assets/Publications/Appendix_Heritage_of_Hunger_EvdM.pdf">Supplementary Materials</a>
-							</div>
-							<details class="abstract-toggle">
-								<summary>Abstract</summary>
-								<p class="abstract-text">
-									<em>Researchers and policymakers increasingly recognize the importance of cultural and traditional practices in shaping economic development outcomes.
-									In this paper, I provide a detailed descriptive account of how ethnic characteristics may shape child poverty and undernutrition in Ethiopia, Ghana,
-									Malawi and Nigeria. I show that children's intrahousehold resource allocation and nutrition outcomes vary significantly across ethnic groups.
-									Using a supervised machine learning technique, I identify six key ancestral ethnic characteristics that differentiate these groups and document
-									how these traits correlate with child poverty and undernutrition. I demonstrate that differences in intrahousehold resource distribution (rather
-									than differences in other socioeconomic traits) serve as an important mechanism underlying these ethnic patterns. This study provides descriptive
-									evidence that effective policies to alleviate child poverty and undernutrition in Sub-Saharan Africa must be tailored to the specific cultural
-									contexts of the populations they serve.</em>
-								</p>
-							</details>
-						</li>
-					</ul>
-				</div>
-			</div>
-
-			<!-- Selected Work in Progress -->
-			<h5 class="section-title"><span>Selected Work in Progress</span></h5>
-			<div class="row">
-				<div class="col-xs-12 col-md-12">
-					<ul class="research-list">
-						<li>
-							<strong>Preaching Against the Choir: Faith, Norms, and Family Planning in Kenya</strong>
-							<span class="paper-status-tag">Work in Progress</span>
-							<div class="paper-names">Eduard van der Merwe</div>
-						</li>
-						<li>
-							<strong>Unequal Prosperity: The Changing Landscape of Global Individual Poverty</strong>
-							<span class="paper-status-tag">Work in Progress</span>
-							<div class="paper-names">Eduard van der Merwe, <a href="https://sites.google.com/site/rossellacalvi2/home">Rossella Calvi</a>, Tanmay Devi, and Yunjie Xie</div>
-						</li>
-						<li>
-							<strong>Understanding Poverty in Ethiopian Refugee Communities</strong>
-							<span class="paper-status-tag">Work in Progress</span>
-							<div class="paper-names">Eduard van der Merwe, <a href="https://sites.google.com/site/rossellacalvi2/home">Rossella Calvi</a>, Theresa Beltramo, Ibrahima Sarr, and Giacomo De Giorgi</div>
-						</li>
-						<li>
-							<strong>Religion, Poverty and Conflict: How Beneficial Is It to Adhere to the State's Religion?</strong>
-							<span class="paper-status-tag">Work in Progress</span>
-							<div class="paper-names">Eduard van der Merwe and <a href="https://mwclance.github.io/matthew_clance.github.io/">Matthew Clance</a></div>
-						</li>
-					</ul>
-				</div>
-			</div>
-
-			<!-- Other Publications -->
-			<h5 class="section-title"><span>Interdisciplinary Work</span></h5>
-			<div class="row">
-				<div class="col-xs-12 col-md-12">
-					<ul class="research-list">
-						<li>
-							<span class="paper-name"><a href="https://doi.org/10.3390/rel16121552">Religious Discrimination and Othering in the U.S. after October 7th: A Data Overview</a></span>
-							<span class="paper-status-tag">Published &middot; <em>Religions</em> &middot; 2025</span>
-							<div class="paper-names"><a href="https://www.elainehowardecklund.com">Elaine Howard Ecklund</a>, <a href="https://kerbygoff.com">Kerby Goff</a>, and Eduard van der Merwe</div>
-							<details class="abstract-toggle">
-								<summary>Abstract</summary>
-								<p class="abstract-text">
-									<em>Recent global conflicts have amplified long-standing patterns of religion-related bias and discrimination in the U.S. 
-										The continuing war on Gaza has led to bias, hostility, and violence against both Muslims and Jews in the U.S. 
-										We present an overview of results from a new 1308-person national survey data collection gathered through NORC’s AmeriSpeak 
-										Panel with oversamples of Jews and Muslims. Our findings reveal important reversals, asymmetries, polarities, and solidarities 
-										in perceptions and experiences of bias among Jews and Muslims and experiences of and responses to the war among religious groups. 
-										Jews were the most likely group to report experiences of religious bias and hostility in the U.S. and the most likely to register 
-										fear about future bias, followed by Muslims, a reversal of patterns from earlier research. Jews were the most likely religious group 
-										to report experiencing an increase in religious bias or hostility after October 7, 2023. Americans reported warm feelings towards 
-										Jews, Muslims, Israelis, and Palestinians but cool feelings towards the Israeli government and Hamas, suggesting that across most 
-										religious groups, Americans demonstrate more sympathy towards religious identities when compared to national identities and political 
-										entities.</em>
-								</p>
-							</details>
-						</li>
-						<li>
-							<span class="paper-name"><a href="https://doi.org/10.1177/0034673X241286536">Book Review: Mark Juergensmeyer, <em>When God Stops Fighting</em></a></span>
-							<span class="paper-status-tag">Published &middot; <em>Review of Religious Research</em> &middot; 2024</span>
-							<div class="paper-names">Eduard van der Merwe and Rachel Schneider</div>
-							<details class="abstract-toggle">
-								<summary>Abstract</summary>
-								<p class="abstract-text">
-									<em>When God Stops Fighting explores which factors—both internally and externally—contribute to the downfall of some of the most violent religious movements.
-									Juergensmeyer's work tries to understand how the "collapse of movements is perceived from the perspective of those who are engaged in them" (p. 118).
-									This work aids our understanding in how some of the most violent wars can develop into a state of non-war which is the first step to aid civilians that are caught in the crossfire.</em>
-								</p>
-							</details>
-						</li>
-					</ul>
-				</div>
-			</div>
-
-			<!-- Pre-Doctoral Work -->
-			<h5 class="section-title"><span>Pre-Doctoral Work</span></h5>
-			<div class="row">
-				<div class="col-xs-12 col-md-12">
-					<ul class="research-list">
-						<li>
-							<span class="paper-name"><a href="https://doi.org/10.1016/j.foodpol.2022.102281">Climate Change and Child Malnutrition: A Nigerian Perspective</a></span>
-							<span class="paper-status-tag">Published &middot; <em>Food Policy</em> &middot; 2022</span>
-							<div class="paper-names">Eduard van der Merwe, <a href="https://mwclance.github.io/matthew_clance.github.io/">Matthew Clance</a>, and Eleni Yitbarek</div>
+		<!-- Publications -->
+		<div class="section-head">
+			<h2 class="section-title">Publications</h2>
+			<a class="to-top" href="#header" aria-label="Back to top"><span aria-hidden="true">&uarr;</span></a>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-md-12">
+				<ul class="research-list">
+					<li id="climate-change-and-child-malnutrition">
+						<span class="paper-name"><a href="https://doi.org/10.1016/j.foodpol.2022.102281">Climate Change and Child Malnutrition: A Nigerian Perspective</a></span>
+						<span class="paper-status-tag">Published &middot; <em>Food Policy</em> &middot; 2022</span>
+						<div class="paper-names">with <a href="https://mwclance.github.io/matthew_clance.github.io/">Matthew Clance</a> and Eleni Yitbarek</div>
+						<div class="paper-actions">
 							<details class="abstract-toggle">
 								<summary>Abstract</summary>
 								<p class="abstract-text">
@@ -196,11 +88,119 @@
 									of progress in lowering children's malnutrition.</em>
 								</p>
 							</details>
-						</li>
-						<li>
-							<span class="paper-name"><a href="https://www.up.ac.za/media/shared/61/WP/wp_2021_24.zp201156.pdf">Government Religious Preference and Intrastate Conflict</a></span>
-							<span class="paper-status-tag">Working Paper &middot; <em>Economic Research Southern Africa</em> &middot; 2021</span>
-							<div class="paper-names">Eduard van der Merwe, <a href="https://sites.google.com/view/carolyn-chisadza/home">Carolyn Chisadza</a>, and <a href="https://mwclance.github.io/matthew_clance.github.io/">Matthew Clance</a></div>
+							<a class="paper-btn" href="https://doi.org/10.1016/j.foodpol.2022.102281">Journal</a>
+							<a class="paper-btn" href="/data#climate-change-and-child-malnutrition">Data</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- Selected Work in Progress -->
+		<div class="section-head">
+			<h2 class="section-title">Selected Work in Progress</h2>
+			<a class="to-top" href="#header" aria-label="Back to top"><span aria-hidden="true">&uarr;</span></a>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-md-12">
+				<ul class="research-list research-list--numbered">
+					<li id="unequal-gains">
+						<span class="paper-name">Unequal Gains: The Changing Landscape of Global Individual Poverty</span>
+						<span class="paper-status-tag">Work in Progress</span>
+						<div class="paper-names">with <a href="https://sites.google.com/site/rossellacalvi2/home">Rossella Calvi</a>, <a href="https://www.tanmaydevi.com">Tanmay Devi</a>, and Yunjie Xie</div>
+					</li>
+					<li id="collective-action-for-climate-resilience">
+						<span class="paper-name">Collective Action for Climate Resilience</span>
+						<span class="paper-status-tag">Work in Progress</span>
+						<div class="paper-names">with Aanchal Bagga, <a href="https://www.tanmaydevi.com">Tanmay Devi</a>, and Yunjie Xie</div>
+					</li>
+					<li id="religion-poverty-and-conflict">
+						<span class="paper-name">Religion, Poverty, and Conflict: How Beneficial Is It to Adhere to the State's Religion?</span>
+						<span class="paper-status-tag">Work in Progress</span>
+						<div class="paper-names">with <a href="https://mwclance.github.io/matthew_clance.github.io/">Matthew Clance</a></div>
+					</li>
+					<li id="understanding-refugee-poverty">
+						<span class="paper-name">Understanding Refugee Poverty</span>
+						<span class="paper-status-tag">Work in Progress</span>
+						<div class="paper-names">with Theresa Beltramo, <a href="https://sites.google.com/site/rossellacalvi2/home">Rossella Calvi</a>, Giacomo De Giorgi, and Ibrahima Sarr</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- Interdisciplinary Work -->
+		<div class="section-head">
+			<h2 class="section-title">Interdisciplinary Work</h2>
+			<a class="to-top" href="#header" aria-label="Back to top"><span aria-hidden="true">&uarr;</span></a>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-md-12">
+				<ul class="research-list">
+					<li id="moral-boundaries-antisemitic-islamophobic-speech">
+						<span class="paper-name">Americans’ Moral Boundaries regarding Antisemitic and Islamophobic Speech</span>
+						<span class="paper-status-tag">Working Paper &middot; 2026</span>
+						<div class="paper-names">with <a href="https://kerbygoff.com">Kerby Goff</a> and <a href="https://www.elainehowardecklund.com">Elaine Howard Ecklund</a></div>
+						<div class="paper-actions">
+							<details class="abstract-toggle">
+								<summary>Abstract</summary>
+								<p class="abstract-text">
+									<em>Defining antisemitic and Islamophobic speech are significant public controversies, but sociologists have yet to map the moral boundaries
+										by which the general population appraises such speech. This is a serious oversight given persistent Islamophobia and antisemitism in the U.S.
+										We fill this gap by implementing a novel approach to commonly used measures of antisemitism and Islamophobia. We ask respondents to judge
+										the extent to which such statements are antisemitic or Islamophobic, and we use latent class analysis (LCA) to map distinct positions on
+										these statements and analyze demographic and ideological correlates of these groups. We identify four groups: maximalists, who interpret
+										most statements as antisemitic or Islamophobic; minimalists, who rarely see any statements as such; ambivalents, who are uncertain or
+										undecided; and criticalists, who distinguish antisemitism from criticism of Israel, or Islamophobia from criticism of Islam. Over one third
+										of the U.S. are ambivalents and a concerning percentage are minimalists about antisemitism (20%) and Islamophobia (10%). Religious and
+										political identity, but not race, distinguish class membership, and joint membership in both criticalist classes follows an elite social
+										profile. Class membership also predicts positions on anti-Muslim and anti-Jewish bias and responses to the Israel-Palestine conflict net
+										of controls. Our study fills a critical gap, demonstrating that heterogeneity in moral boundary making around antisemitism and
+										Islamophobia is conditioned by religion and class in addition to politics.</em>
+								</p>
+							</details>
+						</div>
+					</li>
+					<li id="religious-discrimination-and-othering">
+						<span class="paper-name"><a href="https://doi.org/10.3390/rel16121552">Religious Discrimination and Othering in the U.S. after October 7th: A Data Overview</a></span>
+						<span class="paper-status-tag">Published &middot; <em>Religions</em> &middot; 2025</span>
+						<div class="paper-names">with <a href="https://www.elainehowardecklund.com">Elaine Howard Ecklund</a> and <a href="https://kerbygoff.com">Kerby Goff</a></div>
+						<div class="paper-actions">
+							<details class="abstract-toggle">
+								<summary>Abstract</summary>
+								<p class="abstract-text">
+									<em>Recent global conflicts have amplified long-standing patterns of religion-related bias and discrimination in the U.S.
+										The continuing war on Gaza has led to bias, hostility, and violence against both Muslims and Jews in the U.S.
+										We present an overview of results from a new 1308-person national survey data collection gathered through NORC’s AmeriSpeak
+										Panel with oversamples of Jews and Muslims. Our findings reveal important reversals, asymmetries, polarities, and solidarities
+										in perceptions and experiences of bias among Jews and Muslims and experiences of and responses to the war among religious groups.
+										Jews were the most likely group to report experiences of religious bias and hostility in the U.S. and the most likely to register
+										fear about future bias, followed by Muslims, a reversal of patterns from earlier research. Jews were the most likely religious group
+										to report experiencing an increase in religious bias or hostility after October 7, 2023. Americans reported warm feelings towards
+										Jews, Muslims, Israelis, and Palestinians but cool feelings towards the Israeli government and Hamas, suggesting that across most
+										religious groups, Americans demonstrate more sympathy towards religious identities when compared to national identities and political
+										entities.</em>
+								</p>
+							</details>
+							<a class="paper-btn" href="https://doi.org/10.3390/rel16121552">Journal</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- Other Work -->
+		<div class="section-head">
+			<h2 class="section-title">Other Work</h2>
+			<a class="to-top" href="#header" aria-label="Back to top"><span aria-hidden="true">&uarr;</span></a>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-md-12">
+				<ul class="research-list">
+					<li id="government-religious-preference">
+						<span class="paper-name"><a href="https://doi.org/10.71587/6da1ep32">Government Religious Preference and Intrastate Conflict</a></span>
+						<span class="paper-status-tag">Working Paper &middot; <em>Economic Research Southern Africa</em> &middot; 2021</span>
+						<div class="paper-names">with <a href="https://sites.google.com/view/carolyn-chisadza/home">Carolyn Chisadza</a> and <a href="https://mwclance.github.io/matthew_clance.github.io/">Matthew Clance</a></div>
+						<div class="paper-actions">
 							<details class="abstract-toggle">
 								<summary>Abstract</summary>
 								<p class="abstract-text">
@@ -213,60 +213,29 @@
 									towards religion from the government is particularly notable for countries in Africa and Asia.</em>
 								</p>
 							</details>
-						</li>
-					</ul>
-				</div>
+							<a class="paper-btn" href="https://doi.org/10.71587/6da1ep32">Paper</a>
+							<a class="paper-btn" href="/data#government-religious-preference">Data</a>
+						</div>
+					</li>
+					<li id="when-god-stops-fighting">
+						<span class="paper-name"><a href="https://doi.org/10.1177/0034673X241286536">Book Review: Mark Juergensmeyer, <em>When God Stops Fighting</em></a></span>
+						<span class="paper-status-tag">Published &middot; <em>Review of Religious Research</em> &middot; 2024</span>
+						<div class="paper-names">with Rachel Schneider</div>
+						<div class="paper-actions">
+							<details class="abstract-toggle">
+								<summary>Summary</summary>
+								<p class="abstract-text">
+									<em>When God Stops Fighting explores which factors—both internally and externally—contribute to the downfall of some of the most violent religious movements.
+									Juergensmeyer's work tries to understand how the "collapse of movements is perceived from the perspective of those who are engaged in them" (p. 118).
+									This work aids our understanding in how some of the most violent wars can develop into a state of non-war which is the first step to aid civilians that are caught in the crossfire.</em>
+								</p>
+							</details>
+							<a class="paper-btn" href="https://doi.org/10.1177/0034673X241286536">Journal</a>
+						</div>
+					</li>
+				</ul>
 			</div>
-
 		</div>
+
 	</div>
-
-</main> <!-- close main body -->
-
-<!-- 4. FOOTER -->
-<footer id="footer">
-	<div class="container">
-		<div class="row">
-
-			<!-- CONTACT INFORMATION -->
-			<div class="col-xs-12 col-sm-4 widget">
-				<h3 class="widget-title">Contact</h3>
-				<div class="widget-body">
-					<p class="text-left">
-						<a href="mailto:e.vdmerwe@rice.edu">e.vdmerwe@rice.edu</a><br>
-						<a href="https://economics.rice.edu">Rice University, Houston, TX, USA</a>
-					</p>
-				</div>
-			</div>
-
-			<!-- SOCIAL MEDIA LINKS -->
-			<div class="col-xs-12 col-sm-4 widget">
-				<h3 class="widget-title">Connect With Me</h3>
-				<div class="widget-body">
-					<p class="follow-me-icons text-left">
-						<a href="https://x.com/EduardvdM7" aria-label="Twitter / X profile"><i class="fa-brands fa-x-twitter"></i></a>
-						<a href="https://scholar.google.com/citations?user=xDPxZXcAAAAJ&hl=en" aria-label="Google Scholar profile"><i class="ai ai-google-scholar"></i></a>
-						<a href="https://www.linkedin.com/in/eduard-vdm/" aria-label="LinkedIn profile"><i class="fa-brands fa-linkedin"></i></a>
-						<a href="https://orcid.org/0000-0002-6055-3382" aria-label="ORCID profile"><i class="ai ai-orcid"></i></a>
-					</p>
-				</div>
-			</div>
-
-			<!-- COPYRIGHT -->
-			<div class="col-xs-12 col-sm-4 widget footer-copyright">
-				<div class="widget-body">
-					<p>Copyright &copy; 2026, Eduard van der Merwe</p>
-				</div>
-			</div>
-
-		</div> <!-- close row -->
-	</div> <!-- close container -->
-</footer> <!-- close footer -->
-
-<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
-<script src="assets/js/query.js"></script>
-<script src="assets/js/bootstrap.js"></script>
-<script src="assets/js/backscroll.js"></script>
-<script src="assets/js/links.js"></script>
-</body>
-</html>
+</div>

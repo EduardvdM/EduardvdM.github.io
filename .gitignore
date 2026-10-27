@@ -1,2 +1,16 @@
 .DS_Store
 .statamcp/
+
+# Jekyll build output and local Ruby setup
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.bundle/
+vendor/
+Gemfile.lock
+
+# Original fieldwork photos (may contain faces or GPS data); only processed copies are published
+_fieldwork-originals/
+
+# Research statement, kept locally but not on the site
+assets/ResearchStatement_EvdM.pdf

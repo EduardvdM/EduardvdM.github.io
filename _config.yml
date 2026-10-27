@@ -1,0 +1,36 @@
+# Site settings used by every page
+title: Eduard van der Merwe
+tagline: PhD Candidate in Economics
+institution: Rice University
+url: https://eduardvandermerwe.com
+baseurl: ""
+email: e.vdmerwe@rice.edu
+lang: en
+
+# Job market box at the top of the homepage (details in _data/job_market.yml); set to false after the market
+job_market: true
+
+# Footer icons (names of icons in assets/images/icons.svg)
+social:
+  - name: Google Scholar
+    url: https://scholar.google.com/citations?user=xDPxZXcAAAAJ&hl=en
+    icon: google-scholar
+  - name: SSRN
+    url: https://ssrn.com/author=6691394
+    icon: ssrn
+  - name: LinkedIn
+    url: https://www.linkedin.com/in/eduard-vdm/
+    icon: linkedin
+  - name: ORCID
+    url: https://orcid.org/0000-0002-6055-3382
+    icon: orcid
+
+# Files that should not be published
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - .bundle
+  - assets/less
+  - assets/ResearchStatement_EvdM.pdf
