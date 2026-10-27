@@ -1,16 +1,36 @@
 ---
 # Short link for the job market paper: eduardvandermerwe.com/jmp opens the latest PDF (set in _data/job_market.yml)
+# Built as /jmp/ so both /jmp and /jmp/ work; the preview tags give LinkedIn and messaging apps a card, since they don't follow the refresh
 layout: null
-permalink: /jmp
+permalink: /jmp/
 ---
 {%- assign pdf = site.data.job_market.paper.pdf -%}
+{%- assign jmp_title = site.data.job_market.paper.title | append: " | " | append: site.title | escape -%}
+{%- assign jmp_description = "Job market paper by Eduard van der Merwe, PhD Candidate in Economics at Rice University." -%}
+{%- assign jmp_image = "/assets/images/social-preview.jpg" | absolute_url -%}
+{%- assign jmp_image_alt = "Eduard van der Merwe, PhD Candidate in Economics, Rice University" -%}
 <!DOCTYPE html>
 <html lang="{{ site.lang }}">
 <head>
 	<meta charset="utf-8">
-	<title>{{ site.data.job_market.paper.title | escape }} | {{ site.title }}</title>
+	<title>{{ jmp_title }}</title>
+	<meta name="description" content="{{ jmp_description }}">
 	<meta name="robots" content="noindex">
 	<link rel="canonical" href="{{ pdf | absolute_url }}">
+	<meta property="og:title" content="{{ jmp_title }}">
+	<meta property="og:description" content="{{ jmp_description }}">
+	<meta property="og:type" content="article">
+	<meta property="og:url" content="{{ '/jmp' | absolute_url }}">
+	<meta property="og:site_name" content="{{ site.title }}">
+	<meta property="og:image" content="{{ jmp_image }}">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta property="og:image:alt" content="{{ jmp_image_alt }}">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="{{ jmp_title }}">
+	<meta name="twitter:description" content="{{ jmp_description }}">
+	<meta name="twitter:image" content="{{ jmp_image }}">
+	<meta name="twitter:image:alt" content="{{ jmp_image_alt }}">
 	<meta http-equiv="refresh" content="0; url={{ pdf }}">
 </head>
 <body>
