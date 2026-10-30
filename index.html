@@ -15,25 +15,27 @@ description: "Eduard van der Merwe, PhD candidate in Economics at Rice Universit
 			<div class="home-intro">
 				<!-- Small copy of headshot_EvdM.jpg (the full-size photo is used for link previews and search results) -->
 				<img src="/assets/images/headshot_EvdM-400.jpg" width="400" height="560" alt="Eduard van der Merwe">
-				<p>I am a PhD candidate in Economics at Rice University{% if site.job_market %} and on the 2026&ndash;2027 job market{% else %} in Houston, Texas{% endif %}.
-				My research in applied microeconomics centers on poverty, culture, religion, and social norms, with a primary focus on the African continent.</p>
-				<p>My work examines individual pathways out of poverty and the roots of inter-group inequality.
-				It underscores the pitfalls of one-size-fits-all policies in culturally diverse settings
-				and explores how religion and religious leaders shape and interact with deep-rooted social norms.</p>
-				<p class="about-fields"><strong>Research Fields:</strong> Applied Microeconomics &middot; Household &amp; Family Economics &middot; Development Economics &middot; Economics of Culture and Religion</p>
-				<div class="paper-actions home-intro-actions">
-					<a class="paper-btn" href="/assets/Curriculum_Vitae_EvdM.pdf">CV</a>
-					{%- if site.job_market %}
-					{%- for statement in jm.statements %}
-					{%- assign statement_file = site.static_files | where: "path", statement.file | first %}
-					{%- if statement_file %}
-					<a class="paper-btn" href="{{ statement.file }}">{{ statement.name }}</a>
-					{%- else %}
-					<span class="paper-btn paper-btn--soon">{{ statement.name }}: Coming Soon</span>
-					{%- endif %}
-					{%- endfor %}
-					{%- endif %}
-					<a class="paper-btn" href="mailto:{{ site.email }}">Contact Me</a>
+				<div class="home-intro-text">
+					<p>I am a PhD candidate in Economics at Rice University{% if site.job_market %} and on the 2026&ndash;2027 job market{% else %} in Houston, Texas{% endif %}.
+					My research in applied microeconomics centers on poverty, culture, religion, and social norms, with a primary focus on the African continent.</p>
+					<p>My work examines individual pathways out of poverty and the roots of inter-group inequality.
+					It underscores the pitfalls of one-size-fits-all policies in culturally diverse settings
+					and explores how religion and religious leaders shape and interact with deep-rooted social norms.</p>
+					<p class="about-fields"><strong>Research Fields:</strong> Applied Microeconomics &middot; Household &amp; Family Economics &middot; Development Economics &middot; Economics of Culture and Religion</p>
+					<div class="paper-actions home-intro-actions">
+						<a class="paper-btn" href="/assets/Curriculum_Vitae_EvdM.pdf">CV</a>
+						{%- if site.job_market %}
+						{%- for statement in jm.statements %}
+						{%- assign statement_file = site.static_files | where: "path", statement.file | first %}
+						{%- if statement_file %}
+						<a class="paper-btn" href="{{ statement.file }}">{{ statement.name }}</a>
+						{%- else %}
+						<span class="paper-btn paper-btn--soon">{{ statement.name }}: Coming Soon</span>
+						{%- endif %}
+						{%- endfor %}
+						{%- endif %}
+						<a class="paper-btn" href="mailto:{{ site.email }}">Contact Me</a>
+					</div>
 				</div>
 			</div>
 

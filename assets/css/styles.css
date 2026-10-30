@@ -944,17 +944,28 @@ a.theme-card {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-/* Short introduction with a small photo; the text wraps around the photo */
+/* Short introduction with a photo: on phones the text wraps around a small photo;
+   from 768px the photo and text sit side by side, so the buttons stay under the research fields */
 .home-intro {
   display: flow-root;
   margin: 0 20px 24px;
 }
 .home-intro img {
   float: left;
-  width: 170px;
   height: auto;
-  margin: 4px 28px 8px 0;
   border-radius: 6px;
+}
+@media (min-width: 768px) {
+  .home-intro {
+    display: flex;
+    gap: 28px;
+    align-items: flex-start;
+  }
+  .home-intro img {
+    flex: 0 0 210px;
+    width: 210px;
+    margin-top: 4px;
+  }
 }
 .home-intro p {
   margin: 0 0 12px;
