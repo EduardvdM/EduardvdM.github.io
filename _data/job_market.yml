@@ -25,6 +25,9 @@ paper:
     - name: ASREC Europe
     - name: Florida State University Applied Microeconomics Workshop (invited)
     - name: Southern Economic Association Annual Meeting
+    - name: GLO-Bonn Job Market Sessions
+      upcoming: true
+    - name: CSAE Conference, University of Oxford
       upcoming: true
 
 # Buttons beside CV on the homepage, e.g. "- name: Research Statement" with "file: /assets/....pdf".
